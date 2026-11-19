@@ -7,3 +7,13 @@
 @media(max-width:620px){.games-grid{grid-template-columns:1fr}.game-card{border-right:0}.game-card p{min-height:0}}
 .courtesan-roles{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:38px}.courtesan-roles article{padding:22px 25px;border:1px solid var(--line);background:var(--paper)}.courtesan-roles article>span{font-size:8px;letter-spacing:.16em;color:var(--gold)}.courtesan-roles h3{font:20px var(--serif);font-weight:400;margin:13px 0 8px}.courtesan-roles p{font:11px/1.9 var(--serif);color:var(--muted);margin:0}
 @media(max-width:620px){.courtesan-roles{grid-template-columns:1fr}}
+
+/* Encabezado simplificado en pantallas pequeñas: se retira la ilustración para priorizar la lectura. */
+@media(max-width:620px){
+  .hero-image{height:auto;min-height:0;background:var(--olive-dark);overflow:hidden}
+  .hero-image>img{display:none}
+  .hero-title{position:relative;inset:auto;max-width:none;padding:54px 8% 62px}
+  .hero-title h1{font-size:clamp(43px,12vw,56px);margin:18px 0}
+  .hero-title p{max-width:34ch}
+  .hero-kanji{right:6%;bottom:6%;font-size:42px;opacity:.35}
+}
