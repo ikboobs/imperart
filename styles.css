@@ -17,3 +17,26 @@
   .hero-title p{max-width:34ch}
   .hero-kanji{right:6%;bottom:6%;font-size:42px;opacity:.35}
 }
+
+/* Jerarquía institucional y archivo económico familiar */
+.institution-grid{display:block;border:0}
+.institution-group{margin:0 0 42px}
+.institution-group>h3{font:11px var(--sans);letter-spacing:.18em;color:var(--olive);font-weight:700;padding:0 0 13px;border-bottom:1px solid var(--line);margin:0 0 15px}
+.institution-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.institution-card{min-height:0}
+.institution-card h4{font:20px var(--serif);font-weight:400;margin:0 0 12px}
+.institution-card .card-kanji{margin:18px 0 10px}
+.family-wealth{font:10px/1.7 var(--serif);color:var(--gold);margin:8px 0}
+.family-record{grid-template-columns:55px minmax(0,1fr) 155px;align-items:start}
+.family-budget{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:3px}
+.family-budget strong{font:24px var(--serif);font-weight:400;color:var(--olive)}
+.family-budget small{font:8px var(--sans);letter-spacing:.16em;color:var(--gold)}
+.family-budget span,.family-budget em{font:9px/1.5 var(--serif);color:var(--muted);font-style:normal}
+.member-list{display:flex;flex-direction:column;gap:5px}
+.member-list span{font:10px/1.6 var(--serif)}
+@media(max-width:900px){.institution-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){
+  .institution-cards{grid-template-columns:1fr}
+  .family-record{grid-template-columns:32px minmax(0,1fr)}
+  .family-budget{grid-column:2;align-items:flex-start;text-align:left;border-top:1px solid var(--line);padding-top:10px;margin-top:10px}
+}
