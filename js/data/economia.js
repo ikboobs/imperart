@@ -5,7 +5,7 @@ export const inventories = [
   { family: 'Casa Mercantil', category: 'COMERCIO Y PATRIMONIO', items: ['Cartas de navegación y rutas comerciales', 'Muestras de tejidos, tintes y porcelana', 'Contratos, pagarés y libros de proveedores', 'Objetos de intercambio y piezas importadas'] },
   { family: 'Casa de Erudición', category: 'ESTUDIO Y CULTURA', items: ['Manuscritos anotados y tratados históricos', 'Pinceles, tintas y papel de calidad', 'Obras caligráficas y colecciones de poesía', 'Instrumentos de observación y medición'] },
   { family: 'Casa de Arte', category: 'OBRAS Y PATRONAZGO', items: ['Obras propias y piezas de maestros', 'Bocetos, pigmentos y herramientas', 'Instrumentos musicales y partituras', 'Cartas de patrocinio y certificados de exhibición'] },
-  { family: 'Valle de la Medicina', category: 'SABER MÉDICO', items: ['Herbarios y recetarios', 'Morteros, balanzas y utensilios', 'Registros de tratamientos y observaciones', 'Muestras de plantas y preparados no restringidos'] }
+  { family: 'Valle de la Medicina', category: 'SABER MÉDICO', items: ['Herbarios y recetarios', 'Morteros, balanzas y utensilios', 'Registros de tratamientos y observaciones', 'Muestras de plantas y preparados tradicionales'] }
 ];
 
 export const auctionLots = [
@@ -16,9 +16,10 @@ export const auctionLots = [
 ];
 
 export const games = [
-  { name: 'Arquería', type: 'PATIO · PRECISIÓN', bet: '5 taeles', text: 'Competencia de puntería por rondas; puede jugarse de manera individual o por equipos, con distancia y dificultad acordadas antes de comenzar.' },
-  { name: 'Billar', type: 'SALÓN · DESTREZA', bet: '5 taeles', text: 'Juego de carambolas o modalidad acordada; se valora el control, la estrategia de posición y la precisión de cada tiro.' },
-  { name: 'Weiqi', type: 'TABLERO · TERRITORIO', bet: '4 taeles', text: 'Dos jugadores colocan piedras sobre una cuadrícula para rodear territorio y controlar espacio; no es una batalla naval, sino un juego de influencia, lectura y captura.' },
-  { name: 'Pitch-pot', type: 'SALÓN · PUNTERÍA', bet: '3 taeles', text: 'Los participantes lanzan flechas romas hacia una vasija situada a cierta distancia; se puntúa según la precisión y el lugar de entrada.' },
-  { name: 'Xiangqi', type: 'TABLERO · ESTRATEGIA', bet: '4 taeles', text: 'Ajedrez chino de dos ejércitos; cada pieza tiene movimientos propios y el objetivo es dar jaque mate al general contrario.' }
+  { name: 'Weiqi (Go)', type: 'SALÓN · ESTRATEGIA', bet: '4 taeles', text: 'Juego de tablero en el que dos participantes colocan piedras para rodear territorio, controlar espacio y capturar grupos; exige paciencia, lectura y planificación.' },
+  { name: 'Xiangqi', type: 'SALÓN · ESTRATEGIA', bet: '4 taeles', text: 'Ajedrez chino entre dos ejércitos; cada pieza sigue movimientos propios y la partida concluye al poner en jaque mate al general contrario.' },
+  { name: 'Touhu · Lanzamiento a la vasija', type: 'PATIO · PRECISIÓN', bet: '3 taeles', text: 'Los participantes lanzan flechas romas hacia una vasija colocada a cierta distancia; se puntúa la precisión y el lugar donde cae cada flecha.' },
+  { name: 'Arquería', type: 'PATIO · DESTREZA', bet: '5 taeles', text: 'Competencia de puntería por rondas, individual o por equipos; la distancia, el número de flechas y la puntuación se acuerdan antes de comenzar.' },
+  { name: 'Cuju', type: 'PATIO · JUEGO DE PELOTA', bet: '5 taeles', text: 'Juego tradicional de pelota que se impulsa principalmente con los pies hacia una abertura o meta; puede organizarse por equipos y adaptarse a competencias ceremoniales.' },
+  { name: 'Mahjong', type: 'SALÓN · AZAR Y CÁLCULO', bet: '3 taeles', text: 'Juego de fichas en el que se forman combinaciones mediante robos y descartes; conviene situarlo en una etapa histórica tardía, pues su desarrollo conocido es posterior a otros juegos clásicos de la corte.' }
 ];
