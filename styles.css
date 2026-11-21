@@ -40,3 +40,11 @@
   .family-record{grid-template-columns:32px minmax(0,1fr)}
   .family-budget{grid-column:2;align-items:flex-start;text-align:left;border-top:1px solid var(--line);padding-top:10px;margin-top:10px}
 }
+
+/* Guía de la familia imperial y sociedad: lectura continua y jerarquía visual */
+.imperial-guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.imperial-guide-card{padding:25px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)}
+.imperial-guide-card>span{font:8px var(--sans);letter-spacing:.16em;color:var(--gold)}
+.imperial-guide-card h3{font:22px var(--serif);font-weight:400;margin:14px 0 10px}
+.imperial-guide-card p{font:11px/1.9 var(--serif);color:var(--muted);margin:0}
+@media(max-width:620px){.imperial-guide-grid{grid-template-columns:1fr}.imperial-guide-card{padding:21px}}
