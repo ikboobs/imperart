@@ -27,7 +27,7 @@ el('#rank-table').innerHTML = rankLadder.map((x, i) => `<div class="rank-row"><s
 el('#inventory-grid').innerHTML = inventories.map((x, i) => `<article class="inventory-card"><span>INVENTARIO · 0${i + 1}</span><h3>${x.family}</h3><small>${x.category}</small><ul>${x.items.map(item => `<li>${item}</li>`).join('')}</ul></article>`).join('');
 el('#games-grid').innerHTML = games.map(x => `<article class="game-card"><span>${x.type}</span><h3>${x.name}</h3><p>${x.text}</p><strong>Apuesta sugerida: ${x.bet}</strong></article>`).join('');
 el('#auction-list').innerHTML = auctionLots.map(x => `<article class="auction-lot"><div><span>${x.lot} · ${x.kind}</span><h3>${x.name}</h3><p>${x.text}</p></div><strong>${x.opening}</strong></article>`).join('');
-el('#agenda-grid').innerHTML = publicAgenda.map((x, i) => `<article class="agenda-card"><div class="agenda-meta"><span>${x.day}</span><span>${x.type}</span></div><h3>${x.title}</h3><p>${x.desc}</p><div class="agenda-opportunity"><b>Ocasión de mérito</b><span>${x.opportunity}</span></div></article>`).join('');
+el('#agenda-grid').innerHTML = publicAgenda.map((x, i) => { const week = String(Math.ceil((i + 1) / 3)).padStart(2, '0'); return `<article class="agenda-card"><div class="agenda-meta"><span>${x.day} · SEMANA ${week}</span><span>${x.type}</span></div><h3>${x.title}</h3><p>${x.desc}</p><div class="agenda-opportunity"><b>Ocasión de mérito</b><span>${x.opportunity}</span></div></article>`; }).join('');
 
 if (familyStandings.length) {
   el('#standings').innerHTML = familyStandings.map((family, i) => {
