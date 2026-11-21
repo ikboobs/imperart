@@ -21,8 +21,7 @@ export const familyStandings = [
     budgetLabel: 'Capital privado inicial',
     wealth: 'Alto · patrimonio, colecciones y patronazgo cultural',
     members: [
-      { name: 'Osamu Miya', position: 'Príncipe imperial', points: 0, merits: 0 },
-      { name: 'Tarae', position: 'Consorte de la rama', points: 0, merits: 0 }
+      { name: 'Osamu Miya', position: 'Príncipe imperial · Consejero de asuntos civiles', points: 0, merits: 0 }
     ]
   },
   {
