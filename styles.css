@@ -48,3 +48,37 @@
 .imperial-guide-card h3{font:22px var(--serif);font-weight:400;margin:14px 0 10px}
 .imperial-guide-card p{font:11px/1.9 var(--serif);color:var(--muted);margin:0}
 @media(max-width:620px){.imperial-guide-grid{grid-template-columns:1fr}.imperial-guide-card{padding:21px}}
+
+
+/* Corrección del panel de libertades: el fondo debe abarcar todos los apartados. */
+.agency-panel{
+  height:auto;
+  min-height:0;
+  max-height:none;
+  overflow:visible;
+  align-items:start;
+  align-content:start;
+}
+.agency-panel>div,
+.agency-list{
+  min-width:0;
+  min-height:0;
+}
+.agency-list{
+  grid-auto-rows:min-content;
+  align-content:start;
+}
+.agency-item{
+  min-height:0;
+}
+@media(max-width:900px){
+  .agency-panel{
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:auto auto;
+    padding-bottom:42px;
+  }
+  .agency-list{
+    grid-template-columns:minmax(0,1fr);
+    gap:18px;
+  }
+}
