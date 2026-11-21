@@ -130,3 +130,7 @@
 .conduct-layout ul{margin:0 0 18px;padding-left:18px;color:#f4f0e5;font:11px/2 var(--serif)}
 .conduct-layout .deduction-note{border-top:1px solid #737b68;padding-top:15px;margin:0}
 @media(max-width:760px){.conduct-section{padding:24px 21px}.conduct-layout{grid-template-columns:1fr;gap:16px}}
+
+.family-subtag{display:block;margin:32px 0 14px;font:8px var(--sans);letter-spacing:.17em;color:var(--gold)}
+.milestone-section>.family-subtag{margin:0 0 18px}
+.rank-table-wrap>.family-subtag{grid-column:1/-1;margin:0 0 -14px}
