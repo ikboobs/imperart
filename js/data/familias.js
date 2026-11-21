@@ -7,7 +7,7 @@ export const familyStandings = [
     status: 'Casa imperial reinante',
     budget: 50000,
     budgetLabel: 'Capital privado inicial',
-    wealth: 'Muy alto · procedencia mercantil por línea materna',
+    wealth: 'Muy alto · patrimonio privado y activos mercantiles',
     members: [
       { name: 'Otoha Miya', position: 'Emperatriz reinante', points: 0, merits: 0 },
       { name: 'Aran', position: 'Consorte imperial', points: 0, merits: 0 }
@@ -19,7 +19,7 @@ export const familyStandings = [
     status: 'Rama colateral',
     budget: 18000,
     budgetLabel: 'Capital privado inicial',
-    wealth: 'Alto · procedencia erudita por línea materna',
+    wealth: 'Alto · patrimonio, colecciones y patronazgo cultural',
     members: [
       { name: 'Osamu Miya', position: 'Príncipe imperial', points: 0, merits: 0 },
       { name: 'Tarae', position: 'Consorte de la rama', points: 0, merits: 0 }
@@ -31,7 +31,7 @@ export const familyStandings = [
     status: 'Rama colateral',
     budget: 18000,
     budgetLabel: 'Capital privado inicial',
-    wealth: 'Alto · procedencia erudita por línea materna',
+    wealth: 'Alto · patrimonio, colecciones y patronazgo cultural',
     members: [
       { name: 'Atsumu Miya', position: 'Príncipe imperial', points: 0, merits: 0 }
     ]
@@ -42,7 +42,7 @@ export const familyStandings = [
     status: 'Casa de servicio',
     budget: 6000,
     budgetLabel: 'Capital privado inicial',
-    wealth: 'Medio · ascenso reciente por mérito y servicio',
+    wealth: 'Medio · patrimonio modesto y ascenso reciente por servicio',
     members: [
       { name: 'Tadashi Yamaguchi', position: 'Ministro de Obras', points: 0, merits: 0 }
     ]
