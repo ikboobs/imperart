@@ -119,3 +119,14 @@
   .milestone-card{padding:21px}
   .rank-table-wrap{margin-top:52px}
 }
+
+
+/* La conducta forma parte de la guía de vida familiar, no de un apéndice aislado. */
+.conduct-section{margin:56px 0 64px;padding:30px 34px;background:var(--olive-dark);color:#f4f0e5}
+.conduct-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:8%;align-items:start}
+.conduct-layout .eyebrow{color:#c7b99b}
+.conduct-layout h3{font:29px var(--serif);font-weight:400;margin:8px 0}
+.conduct-layout p{font:12px/1.95 var(--serif);color:#d3d0c4;margin:0 0 16px}
+.conduct-layout ul{margin:0 0 18px;padding-left:18px;color:#f4f0e5;font:11px/2 var(--serif)}
+.conduct-layout .deduction-note{border-top:1px solid #737b68;padding-top:15px;margin:0}
+@media(max-width:760px){.conduct-section{padding:24px 21px}.conduct-layout{grid-template-columns:1fr;gap:16px}}
