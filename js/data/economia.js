@@ -38,6 +38,6 @@ export const games = [
   { name: 'Tiro con arco', type: 'PATIO · PUNTERÍA', bet: '5 taeles', text: 'Los participantes disparan una cantidad acordada de flechas hacia una diana situada a distancia establecida; se comparan los puntos obtenidos y se exige respetar las medidas de seguridad.' },
   { name: 'Dardos', type: 'PATIO · PUNTERÍA', bet: '3 taeles', text: 'Cada jugador lanza dardos hacia una diana numerada y suma o resta puntos según la modalidad elegida; la precisión y la regularidad determinan el resultado.' },
   { name: 'Cup Pong', type: 'PATIO · DESTREZA', bet: '3 taeles', text: 'Por equipos o de manera individual, se lanzan pelotas ligeras hacia vasos colocados en el extremo opuesto de una mesa; cada acierto elimina un vaso según las reglas acordadas.' },
-  { name: 'Día de dados · Dice Party', type: 'SALÓN · AZAR', bet: '2 taeles', text: 'Una ronda de minijuegos con dados en la que se combinan suerte y decisiones rápidas; antes de comenzar se anuncia la modalidad y la puntuación correspondiente.' },
+  { name: 'Dice Party', type: 'SALÓN · AZAR', bet: '2 taeles', text: 'Una ronda de minijuegos con dados en la que se combinan suerte y decisiones rápidas; antes de comenzar se anuncia la modalidad y la puntuación correspondiente.' },
   { name: 'Truco', type: 'SALÓN · CARTAS Y ESTRATEGIA', bet: '3 taeles', text: 'Juego de bazas en el que las apuestas y los desafíos forman parte de la partida; el engaño permitido por las reglas y la lectura de los rivales son tan importantes como las cartas.' }
 ];
