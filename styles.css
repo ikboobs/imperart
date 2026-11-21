@@ -96,3 +96,26 @@
   color:var(--muted, #777);
   font-weight:400;
 }
+
+
+/* Hitos de edad y progresión familiar */
+.milestone-section{margin-top:76px}
+.milestone-section .section-heading{margin-bottom:30px}
+.milestone-section .section-heading h3{font:30px var(--serif);font-weight:400;margin:0}
+.milestone-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.milestone-card{padding:25px 27px;border:1px solid var(--line);background:var(--paper)}
+.milestone-card>span{font:8px var(--sans);letter-spacing:.15em;color:var(--gold)}
+.milestone-card h4{font:21px var(--serif);font-weight:400;margin:13px 0 9px}
+.milestone-card p{font:11px/1.9 var(--serif);color:var(--muted);margin:0}
+.milestone-card:nth-child(4),.milestone-card:nth-child(5){background:var(--paper2)}
+@media(max-width:900px){
+  .milestone-grid{grid-template-columns:1fr}
+  .rank-table-wrap{grid-template-columns:1fr;gap:24px}
+  .rank-row{grid-template-columns:30px minmax(0,1fr) 75px;gap:10px}
+  .rank-row p{grid-column:2 / -1}
+}
+@media(max-width:620px){
+  .milestone-section{margin-top:52px}
+  .milestone-card{padding:21px}
+  .rank-table-wrap{margin-top:52px}
+}
