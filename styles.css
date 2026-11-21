@@ -82,3 +82,17 @@
     gap:18px;
   }
 }
+
+
+/* Identificación breve de quienes ocupan los cargos de la casa imperial. */
+.imperial-guide-card .imperial-person{
+  margin:0.25rem 0 0.65rem;
+  font-family:var(--sans, "DM Sans", sans-serif);
+  font-size:0.78rem;
+  font-weight:600;
+  letter-spacing:0.025em;
+}
+.imperial-guide-card .imperial-person span{
+  color:var(--muted, #777);
+  font-weight:400;
+}
