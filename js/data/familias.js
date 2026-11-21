@@ -15,24 +15,24 @@ export const familyStandings = [
   },
   {
     id: 'miya-osamu',
-    name: 'Casa Miya · Rama de Osamu',
+    name: 'Casa Miya · Rama colateral I',
     status: 'Rama colateral',
     budget: 18000,
     budgetLabel: 'Capital privado inicial',
     wealth: 'Alto · patrimonio, colecciones y patronazgo cultural',
     members: [
-      { name: 'Osamu Miya', position: 'Príncipe imperial · Consejero de asuntos civiles y administración', points: 0, merits: 0 }
+      { name: 'Osamu Miya', position: 'Príncipe imperial', points: 0, merits: 0 }
     ]
   },
   {
     id: 'miya-atsumu',
-    name: 'Casa Miya · Rama de Atsumu',
+    name: 'Casa Miya · Rama colateral II',
     status: 'Rama colateral',
     budget: 18000,
     budgetLabel: 'Capital privado inicial',
     wealth: 'Alto · patrimonio, colecciones y patronazgo cultural',
     members: [
-      { name: 'Atsumu Miya', position: 'Príncipe imperial · Consejero de asuntos militares y seguridad', points: 0, merits: 0 }
+      { name: 'Atsumu Miya', position: 'Príncipe imperial', points: 0, merits: 0 }
     ]
   },
   {
