@@ -101,7 +101,7 @@ if (familyStandings.length) {
   el('#standings').innerHTML = familyStandings.map((family, i) => {
     const totalPoints = family.housePoints || 0;
     const totalMerits = family.houseMerits || Math.floor(totalPoints / 10);
-    const familyMembers = members.filter(member => member.houseId === family.id || member.house === family.name);
+    const familyMembers = members.filter(member => family.id === 'miya-soberana' ? member.houseId === 'miya-soberana' || String(member.houseId || '').startsWith('miya-colateral-') : member.houseId === family.id || member.house === family.name);
     return `
       <article class="standing family-record">
         <div class="standing-rank">0${i + 1}</div>
