@@ -28,7 +28,7 @@ el('#houses-grid').innerHTML = familyBranches.map((x, i) => {
   const roster = members.filter(member => member.houseId === key || member.house === x.name);
   const inventory = inventories.find(item => item.family === x.name);
   return `<article class="house-card"><span class="house-index">0${i + 1}</span><span class="house-type">${x.type}</span><h3>${x.name}</h3><p>${x.text}</p>
-    <div class="house-roster"><b>Integrantes registrados</b>${roster.map(member => `<div class="house-member"><strong>${member.name}</strong><span>${member.familyRole || member.occupation}</span><small>${member.age ? member.age + ' años · ' : ''}${member.civilStatus || 'Estado civil pendiente'}</small></div>`).join('')}</div>
+    <div class="house-roster"><b>Integrantes registrados</b>${roster.map(member => `<div class="house-member"><strong>${member.name}</strong><span>${member.familyRole || member.occupation}</span><small>${member.age ? member.age + ' años · ' : ''}${member.civilStatus || 'Estado civil pendiente'}</small><small>${member.branch || 'Rama pendiente'} · ${member.legitimacy || 'Filiación pendiente'}</small><small>${member.occupation || 'Ocupación pendiente'}${member.reportsTo ? ' · Responde a: ' + member.reportsTo : ''}${member.patron ? ' · Patrocinio: ' + member.patron : ''}</small><small>${member.points || 0} puntos personales · ${member.merits || 0} méritos personales</small></div>`).join('')}</div>
     ${inventory ? `<div class="house-inventory"><b>Patrimonio e inventario</b><ul>${inventory.items.map(item => `<li>${item}</li>`).join('')}</ul></div>` : ''}
   </article>`;
 }).join('');
@@ -50,7 +50,7 @@ if (familyStandings.length) {
         <div class="standing-main">
           <h3>${family.name}</h3><span>${family.status} · ${family.members.length} integrantes</span>
           <p class="family-wealth">${family.wealth}</p>
-          <div class="member-list">${family.members.map(member => `<span><b>${member.name}</b> · ${member.position}</span>`).join('')}</div>
+          <div class="member-list">${members.filter(member => member.houseId === family.id || member.house === family.name).map(member => `<span><b>${member.name}</b> · ${member.familyRole || member.occupation} · ${member.points || 0} pts / ${member.merits || 0} méritos</span>`).join('')}</div>
         </div>
         <div class="family-budget"><strong>${family.budget.toLocaleString('es-CO')}</strong><small>TAELES</small><span>${family.budgetLabel}</span><em>${totalPoints} puntos de casa · ${totalMerits} méritos de casa</em></div>
       </article>`;
