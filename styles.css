@@ -134,3 +134,5 @@
 .family-subtag{display:block;margin:32px 0 14px;font:8px var(--sans);letter-spacing:.17em;color:var(--gold)}
 .milestone-section>.family-subtag{margin:0 0 18px}
 .rank-table-wrap>.family-subtag{grid-column:1/-1;margin:0 0 -14px}
+
+.institution-holder{margin:0 0 9px!important;color:var(--gold)!important;font:9px var(--sans)!important;letter-spacing:.06em}
