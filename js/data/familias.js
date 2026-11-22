@@ -44,8 +44,8 @@ export const familyStandings = [
       { name: 'Tobio Kageyama', position: 'Cabeza de casa · General', points: 0, merits: 0 },
       { name: 'Mizuki', position: 'Sobrino del cabeza de casa', points: 0, merits: 0 }
     ]
-  }
-  ,{
+  },
+  {
     id: 'sakusa', name: 'Casa Sakusa', status: 'Casa noble · sucesión familiar por precisar', budget: 0,
     budgetLabel: 'Estipendio pendiente de establecer', housePoints: 0, houseMerits: 0,
     wealth: 'Por determinar · patrimonio pendiente de registro',
