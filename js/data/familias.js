@@ -45,4 +45,19 @@ export const familyStandings = [
       { name: 'Mizuki', position: 'Sobrino del cabeza de casa', points: 0, merits: 0 }
     ]
   }
+  ,{
+    id: 'sakusa', name: 'Casa Sakusa', status: 'Casa noble · sucesión familiar por precisar', budget: 0,
+    budgetLabel: 'Estipendio pendiente de establecer', housePoints: 0, houseMerits: 0,
+    wealth: 'Por determinar · patrimonio pendiente de registro',
+    members: [
+      { name: 'Sakusa Kiyoomi', position: 'Heredero de la familia Sakusa' },
+      { name: 'Sakusa Khaowei', position: 'Antiguo heredero; abdicó de esa condición' }
+    ]
+  },
+  {
+    id: 'akaashi', name: 'Casa Akaashi', status: 'Casa de servicio civil', budget: 0,
+    budgetLabel: 'Estipendio pendiente de establecer', housePoints: 0, houseMerits: 0,
+    wealth: 'Por determinar · patrimonio pendiente de registro',
+    members: [ { name: 'Akaashi Sumire', position: 'Cabeza de casa · Ministerio de Personal' } ]
+  }
 ];
