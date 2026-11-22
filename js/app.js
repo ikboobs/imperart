@@ -4,6 +4,7 @@ import { pointTypes, meritRewards, decorumRules } from './data/meritos.js';
 import { inventories, auctionLots, games } from './data/economia.js';
 import { publicAgenda } from './data/agenda.js';
 import { familyStandings } from './data/familias.js';
+import { members } from './data/miembros.js';
 
 const el = (selector) => document.querySelector(selector);
 const prose = (items) => items.map(p => `<p>${p}</p>`).join('');
@@ -11,20 +12,29 @@ const prose = (items) => items.map(p => `<p>${p}</p>`).join('');
 el('#dynasty-story').innerHTML = prose(dynastyStory);
 
 const groupOrder = ['ADMINISTRACIÓN CENTRAL', 'ADMINISTRACIÓN CIVIL', 'MANDO MILITAR', 'AUTORIDAD RELIGIOSA', 'INSTITUCIONES ESPECIALIZADAS'];
+const holderByTitle = { 'Ministerio de Obras': 'tadashi-yamaguchi', 'Generales y comandantes': 'tobio-kageyama', 'Ministerio de Personal': 'akaashi-sumire' };
 el('#institutions-grid').innerHTML = groupOrder.map(group => {
   const cards = institutions.filter(x => x.group === group);
   if (!cards.length) return '';
   return `<section class="institution-group"><h3>${group}</h3><div class="institution-cards">${cards.map(x => `
-    <article class="institution-card"><div class="card-top"><span>${x.no}</span><span>${x.group}</span></div><div class="card-kanji">${x.chinese}</div><h4>${x.title}</h4>${x.holder ? `<p class="institution-holder">${x.holder}</p>` : ''}<p>${x.text}</p></article>`).join('')}</div></section>`;
+    <article class="institution-card"><div class="card-top"><span>${x.no}</span><span>${x.group}</span></div><div class="card-kanji">${x.chinese}</div><h4>${x.title}</h4>${(holderByTitle[x.title] && members.find(m => m.id === holderByTitle[x.title]) ? `<p class="institution-holder">${members.find(m => m.id === holderByTitle[x.title]).name} · ${members.find(m => m.id === holderByTitle[x.title]).house}</p>` : x.holder ? `<p class="institution-holder">${x.holder}</p>` : '')}<p>${x.text}</p></article>`).join('')}</div></section>`;
 }).join('');
 
 el('#obediences-list').innerHTML = obediences.map((x, i) => `
   <article class="obedience"><span class="obedience-no">0${i + 1}</span><div><span class="chinese-label">${x.chinese}</span><h3>${x.title}</h3><p>${x.text}</p></div></article>`).join('');
 el('#agency-list').innerHTML = agency.map(([title, text], i) => `<div class="agency-item"><span>0${i + 1}</span><div><b>${title}</b><small>${text}</small></div></div>`).join('');
-el('#houses-grid').innerHTML = familyBranches.map((x, i) => `<article class="house-card"><span class="house-index">0${i + 1}</span><span class="house-type">${x.type}</span><h3>${x.name}</h3><p>${x.text}</p></article>`).join('');
+el('#houses-grid').innerHTML = familyBranches.map((x, i) => {
+  const key = x.name === 'Casa Miya' ? 'miya-soberana' : x.name.toLowerCase().replace('casa ', '');
+  const roster = members.filter(member => member.houseId === key || member.house === x.name);
+  const inventory = inventories.find(item => item.family === x.name);
+  return `<article class="house-card"><span class="house-index">0${i + 1}</span><span class="house-type">${x.type}</span><h3>${x.name}</h3><p>${x.text}</p>
+    <div class="house-roster"><b>Integrantes registrados</b>${roster.map(member => `<div class="house-member"><strong>${member.name}</strong><span>${member.familyRole || member.occupation}</span><small>${member.age ? member.age + ' años · ' : ''}${member.civilStatus || 'Estado civil pendiente'}</small></div>`).join('')}</div>
+    ${inventory ? `<div class="house-inventory"><b>Patrimonio e inventario</b><ul>${inventory.items.map(item => `<li>${item}</li>`).join('')}</ul></div>` : ''}
+  </article>`;
+}).join('');
 el('#points-grid').innerHTML = pointTypes.map(x => `<article class="point-card"><div class="point-head"><span>${x.code}</span><b>${x.value}</b></div><h3>${x.title}</h3><p>${x.text}</p></article>`).join('');
 el('#reward-grid').innerHTML = meritRewards.map(x => `<article class="reward-card"><span>${x.merit} ${x.merit === 1 ? 'MÉRITO' : 'MÉRITOS'}</span><h3>${x.title}</h3><p>${x.benefits}</p></article>`).join('');
-el('#inventory-grid').innerHTML = inventories.map((x, i) => `<article class="inventory-card"><span>INVENTARIO · 0${i + 1}</span><h3>${x.family}</h3><small>${x.category}</small><ul>${x.items.map(item => `<li>${item}</li>`).join('')}</ul></article>`).join('');
+// Los inventarios se renderizan dentro de la ficha de cada casa, no en Economía.
 el('#salon-games').innerHTML = games.filter(x => x.space === 'SALÓN' && x.points).map(x => `<article class="game-card"><span>${x.type}</span><h3>${x.name}</h3><p>${x.text}</p><strong>${x.points} ${x.points === 1 ? 'punto' : 'puntos'} por partida ganada</strong></article>`).join('');
 el('#patio-games').innerHTML = games.filter(x => x.space === 'PATIO').map(x => `<article class="game-card"><span>${x.type}</span><h3>${x.name}</h3><p>${x.text}</p><strong>Apuesta inicial sugerida: ${x.bet}</strong></article>`).join('');
 el('#auction-list').innerHTML = auctionLots.map(x => `<article class="auction-lot"><div><span>${x.lot} · ${x.kind}</span><h3>${x.name}</h3><p>${x.text}</p></div><strong>${x.opening}</strong></article>`).join('');
