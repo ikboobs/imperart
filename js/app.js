@@ -44,13 +44,14 @@ if (familyStandings.length) {
   el('#standings').innerHTML = familyStandings.map((family, i) => {
     const totalPoints = family.housePoints || 0;
     const totalMerits = family.houseMerits || Math.floor(totalPoints / 10);
+    const familyMembers = members.filter(member => member.houseId === family.id || member.house === family.name);
     return `
       <article class="standing family-record">
         <div class="standing-rank">0${i + 1}</div>
         <div class="standing-main">
-          <h3>${family.name}</h3><span>${family.status} · ${family.members.length} integrantes</span>
+          <h3>${family.name}</h3><span>${family.status} · ${familyMembers.length} integrantes</span>
           <p class="family-wealth">${family.wealth}</p>
-          <div class="member-list">${members.filter(member => member.houseId === family.id || member.house === family.name).map(member => `<span><b>${member.name}</b> · ${member.familyRole || member.occupation} · ${member.points || 0} pts / ${member.merits || 0} méritos</span>`).join('')}</div>
+          <div class="member-list">${familyMembers.map(member => `<span><b>${member.name}</b> · ${member.familyRole || member.occupation} · ${member.points || 0} pts / ${member.merits || 0} méritos</span>`).join('')}</div>
         </div>
         <div class="family-budget"><strong>${family.budget.toLocaleString('es-CO')}</strong><small>TAELES</small><span>${family.budgetLabel}</span><em>${totalPoints} puntos de casa · ${totalMerits} méritos de casa</em></div>
       </article>`;
