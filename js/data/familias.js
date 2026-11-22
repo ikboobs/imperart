@@ -23,7 +23,8 @@ export const familyStandings = [
     name: 'Casa Yamaguchi',
     status: 'Casa de eruditos · servicio imperial',
     budget: 6000,
-    budgetLabel: 'Estipendio alto · servicio civil imperial',
+    incomeLevel: 'Alto',
+    budgetLabel: 'Capital familiar disponible',
     wealth: 'Alto · ingresos vinculados al servicio ministerial, obras y patrimonio familiar',
     members: [
       { name: 'Tadashi Yamaguchi', position: 'Cabeza de casa · Ministro de Obras', points: 0, merits: 0 },
@@ -59,7 +60,8 @@ export const familyStandings = [
   },
   {
     id: 'akaashi', name: 'Casa Akaashi', status: 'Casa de servicio civil', budget: 0,
-    budgetLabel: 'Estipendio pendiente de establecer', housePoints: 0, houseMerits: 0,
+    incomeLevel: 'Pendiente de evaluación',
+    budgetLabel: 'Capital familiar pendiente de registro', housePoints: 0, houseMerits: 0,
     wealth: 'Por determinar · patrimonio pendiente de registro',
     members: [ { name: 'Akaashi Sumire', position: 'Cabeza de casa · Ministerio de Personal' } ]
   }
