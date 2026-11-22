@@ -64,7 +64,7 @@ el('#houses-grid').innerHTML = familyBranches.map((family, index) => {
   const other = familyMembers.filter(member => !placed.has(member.id));
   const branchPanel = (title, description, list) => list.length ? `<section class="tree-branch"><h4>${title}</h4><p>${description}</p><div class="tree-people">${list.map(memberNode).join('')}</div></section>` : '';
   return `
-    <article class="house-organigram" id="casa-${esc(family.name.toLowerCase().replace(/[^a-z0-9]+/g,'-'))}">
+    <article class="house-organigram" id="casa-${esc(family.name.toLowerCase().replace(/^casa\\s+/,'').replace(/[^a-z0-9]+/g,'-'))}">
       <header class="house-organigram-head">
         <div><span class="house-index">0${index + 1}</span><span class="house-type">${esc(family.type)}</span><h3>${esc(family.name)}</h3><p>${esc(family.text)}</p></div>
         <div class="house-summary"><span>CAPITAL FAMILIAR</span><strong>${(familyStandings.find(item => item.name === family.name)?.budget || 0).toLocaleString('es-CO')}</strong><small>taeles disponibles</small><em>${esc(familyStandings.find(item => item.name === family.name)?.incomeLevel || 'Ingreso pendiente')}</em></div>
