@@ -36,10 +36,10 @@ export const familyStandings = [
     name: 'Casa Kageyama',
     status: 'Casa militar',
     budget: 12000,
-    budgetLabel: 'Cuenta familiar · capital privado inicial provisional',
+    budgetLabel: 'Cuenta familiar · estipendio medio provisional',
     housePoints: 0,
     houseMerits: 0,
-    wealth: 'Alto · propiedades familiares, caballos y equipo privado',
+    wealth: 'Medio · patrimonio familiar y tradición de servicio militar',
     members: [
       { name: 'Tobio Kageyama', position: 'Cabeza de casa · General', points: 0, merits: 0 },
       { name: 'Mizuki', position: 'Sobrino del cabeza de casa', points: 0, merits: 0 }
