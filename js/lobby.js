@@ -1,5 +1,4 @@
 import { institutions } from './data/instituciones.js';
-import { members } from './data/miembros.js';
 
 const holders = {
   'Ministerio de Obras': 'tadashi-yamaguchi',
