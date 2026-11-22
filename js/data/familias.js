@@ -6,7 +6,9 @@ export const familyStandings = [
     name: 'Casa Miya',
     status: 'Casa imperial reinante',
     budget: 50000,
-    budgetLabel: 'Capital privado inicial',
+    budgetLabel: 'Cuenta familiar · capital privado inicial',
+    housePoints: 0,
+    houseMerits: 0,
     wealth: 'Muy alto · patrimonio privado, rentas y bienes de la casa reinante',
     members: [
       { name: 'Otoha Miya', position: 'Emperatriz reinante · cabeza de la casa', points: 0, merits: 0 },
@@ -34,7 +36,9 @@ export const familyStandings = [
     name: 'Casa Kageyama',
     status: 'Casa militar',
     budget: 12000,
-    budgetLabel: 'Capital privado inicial · provisional',
+    budgetLabel: 'Cuenta familiar · capital privado inicial provisional',
+    housePoints: 0,
+    houseMerits: 0,
     wealth: 'Alto · propiedades familiares, caballos y equipo privado',
     members: [
       { name: 'Tobio Kageyama', position: 'Cabeza de casa · General', points: 0, merits: 0 },
