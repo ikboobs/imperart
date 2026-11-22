@@ -312,3 +312,28 @@
  .house-inventory-panel{grid-template-columns:1fr;gap:14px;padding:19px 16px}
  .house-inventory-panel ul{font-size:10px}
 }
+
+/* Paleta sincronizada con la preferencia de apariencia del dispositivo */
+:root{color-scheme:light}
+@media(prefers-color-scheme:dark){
+ :root{color-scheme:dark}
+ body,.site-header,.section,.house-organigram,.tree-chart,.tree-branch,.tree-person,.institution-card,.imperial-guide-card,.point-card,.reward-card,.standing,.agenda-card,.game-card,.auction-lot,.member-dialog,.character-template,.house-inventory-panel,.genealogy-board{color:var(--ink)}
+ .site-header,.footer,.section-tag,.hero-meta,.hero-caption,nav,.edition{border-color:var(--line);color:var(--muted)}
+ .tree-chart,.genealogy-board,.tree-branch,.tree-person,.institution-card,.imperial-guide-card,.point-card,.reward-card,.standing,.agenda-card,.game-card,.auction-lot,.member-dialog,.character-template,.house-organigram{background-color:var(--paper)}
+ .tree-person:hover,.tree-person:focus-visible{background:var(--paper2);color:var(--ink)}
+ .tree-person-copy small,.tree-branch>p,.house-organigram-head>div:first-child>p,.house-inventory-panel ul,.profile-facts dd,.prose p,.prose-single{color:var(--muted)}
+ .tree-person-copy strong,.tree-branch h4,.house-organigram-head h3,.house-summary strong,.inventory-heading h4,.institution-card h4,.member-dialog h2,.profile-role,.profile-facts dt{color:var(--ink)}
+ .house-summary,.house-organigram-foot,.house-inventory,.house-inventory-panel,.genealogy-topline,.genealogy-branch.collateral-branch,.genealogy-branch.other-branch{border-color:var(--line)}
+ .house-inventory-panel,.note-box,.merit-intro,.agency-panel,.quote-band{background:var(--paper2);color:var(--ink)}
+ .house-inventory-panel .eyebrow,.inventory-heading p{color:var(--gold)}
+ .family-contributions,.family-contributions p,.family-contributions li,.standings-note,.auction-note,.host-note p,.institution-card p,.imperial-guide-card p{color:var(--muted)}
+ .family-contributions h3,.section-heading h2,.section h2,.section h3,.section h4{color:var(--ink)}
+ .brand-mark{color:var(--gold)}
+ .member-dialog{border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+ .member-dialog::backdrop{background:rgba(0,0,0,.72)}
+ .profile-close{color:var(--ink);background:var(--paper2);border-color:var(--line)}
+ .profile-facts div{border-color:var(--line)}
+ .institution-card,.imperial-guide-card,.tree-branch,.tree-person,.point-card,.reward-card,.standing,.agenda-card,.game-card,.auction-lot{border-color:var(--line)}
+ .tea-illustration img{mix-blend-mode:screen;opacity:.78}
+}
+@media(prefers-color-scheme:light){:root{color-scheme:light}}
