@@ -12,7 +12,7 @@ const prose = (items) => items.map(p => `<p>${p}</p>`).join('');
 el('#dynasty-story').innerHTML = prose(dynastyStory);
 
 const groupOrder = ['ADMINISTRACIÓN CENTRAL', 'ADMINISTRACIÓN CIVIL', 'MANDO MILITAR', 'AUTORIDAD RELIGIOSA', 'INSTITUCIONES ESPECIALIZADAS'];
-const holderByTitle = { 'Ministerio de Obras': 'tadashi-yamaguchi', 'Generales y comandantes': 'tobio-kageyama', 'Ministerio de Personal': 'akaashi-sumire' };
+const holderByTitle = { 'Ministerio de Obras': 'tadashi-yamaguchi', 'Ministerio de Personal': 'akaashi-sumire' };
 el('#institutions-grid').innerHTML = groupOrder.map(group => {
   const cards = institutions.filter(x => x.group === group);
   if (!cards.length) return '';
