@@ -15,7 +15,7 @@ el('#institutions-grid').innerHTML = groupOrder.map(group => {
   const cards = institutions.filter(x => x.group === group);
   if (!cards.length) return '';
   return `<section class="institution-group"><h3>${group}</h3><div class="institution-cards">${cards.map(x => `
-    <article class="institution-card"><div class="card-top"><span>${x.no}</span><span>${x.group}</span></div><div class="card-kanji">${x.chinese}</div><h4>${x.title}</h4><p>${x.text}</p></article>`).join('')}</div></section>`;
+    <article class="institution-card"><div class="card-top"><span>${x.no}</span><span>${x.group}</span></div><div class="card-kanji">${x.chinese}</div><h4>${x.title}</h4>${x.holder ? `<p class="institution-holder">${x.holder}</p>` : ''}<p>${x.text}</p></article>`).join('')}</div></section>`;
 }).join('');
 
 el('#obediences-list').innerHTML = obediences.map((x, i) => `
