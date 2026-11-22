@@ -3,47 +3,42 @@
 export const familyStandings = [
   {
     id: 'miya-soberana',
-    name: 'Casa Miya · Rama soberana',
+    name: 'Casa Miya',
     status: 'Casa imperial reinante',
     budget: 50000,
     budgetLabel: 'Capital privado inicial',
-    wealth: 'Muy alto · patrimonio privado y activos mercantiles',
+    wealth: 'Muy alto · patrimonio privado, rentas y bienes de la casa reinante',
     members: [
-      { name: 'Otoha Miya', position: 'Emperatriz reinante', points: 0, merits: 0 },
-      { name: 'Aran', position: 'Consorte imperial', points: 0, merits: 0 }
-    ]
-  },
-  {
-    id: 'miya-osamu',
-    name: 'Casa Miya · Rama colateral I',
-    status: 'Rama colateral',
-    budget: 18000,
-    budgetLabel: 'Capital privado inicial',
-    wealth: 'Alto · patrimonio, colecciones y patronazgo cultural',
-    members: [
-      { name: 'Osamu Miya', position: 'Príncipe imperial', points: 0, merits: 0 }
-    ]
-  },
-  {
-    id: 'miya-atsumu',
-    name: 'Casa Miya · Rama colateral II',
-    status: 'Rama colateral',
-    budget: 18000,
-    budgetLabel: 'Capital privado inicial',
-    wealth: 'Alto · patrimonio, colecciones y patronazgo cultural',
-    members: [
-      { name: 'Atsumu Miya', position: 'Príncipe imperial', points: 0, merits: 0 }
+      { name: 'Otoha Miya', position: 'Emperatriz reinante · cabeza de la casa', points: 0, merits: 0 },
+      { name: 'Aran', position: 'Consorte imperial · antiguo general', points: 0, merits: 0 },
+      { name: 'Cuatro hijos imperiales', position: 'Descendencia de la soberana · nombres pendientes', points: 0, merits: 0 },
+      { name: 'Osamu Miya y Atsumu Miya', position: 'Príncipes imperiales · ramas colaterales', points: 0, merits: 0 }
     ]
   },
   {
     id: 'yamaguchi',
     name: 'Casa Yamaguchi',
-    status: 'Casa de servicio',
-    budget: 6000,
+    status: 'Casa de eruditos · servicio imperial',
+    budget: 9000,
     budgetLabel: 'Capital privado inicial',
-    wealth: 'Medio · patrimonio modesto y ascenso reciente por servicio',
+    wealth: 'Medio-alto · biblioteca familiar, colecciones y patrimonio doméstico',
     members: [
-      { name: 'Tadashi Yamaguchi', position: 'Ministro de Obras', points: 0, merits: 0 }
+      { name: 'Tadashi Yamaguchi', position: 'Cabeza de casa · Ministro de Obras', points: 0, merits: 0 },
+      { name: 'Kei', position: 'Consorte de Tadashi', points: 0, merits: 0 },
+      { name: 'Tarae Yamaguchi', position: 'Integrante de la casa · hermana de Tadashi', points: 0, merits: 0 },
+      { name: 'Tsubaru Yamaguchi', position: 'Integrante de la casa · hermana de Tadashi', points: 0, merits: 0 }
+    ]
+  },
+  {
+    id: 'kageyama',
+    name: 'Casa Kageyama',
+    status: 'Casa militar',
+    budget: 12000,
+    budgetLabel: 'Capital privado inicial · provisional',
+    wealth: 'Alto · propiedades familiares, caballos y equipo privado',
+    members: [
+      { name: 'Tobio Kageyama', position: 'Cabeza de casa · General', points: 0, merits: 0 },
+      { name: 'Mizuki', position: 'Sobrino del cabeza de casa', points: 0, merits: 0 }
     ]
   }
 ];
