@@ -36,7 +36,7 @@ el('#points-grid').innerHTML = pointTypes.map(x => `<article class="point-card">
 el('#reward-grid').innerHTML = meritRewards.map(x => `<article class="reward-card"><span>${x.merit} ${x.merit === 1 ? 'MÉRITO' : 'MÉRITOS'}</span><h3>${x.title}</h3><p>${x.benefits}</p></article>`).join('');
 // Los inventarios se renderizan dentro de la ficha de cada casa, no en Economía.
 el('#salon-games').innerHTML = games.filter(x => x.space === 'SALÓN' && x.points).map(x => `<article class="game-card"><span>${x.type}</span><h3>${x.name}</h3><p>${x.text}</p><strong>${x.points} ${x.points === 1 ? 'punto' : 'puntos'} por partida ganada</strong></article>`).join('');
-el('#patio-games').innerHTML = games.filter(x => x.space === 'PATIO').map(x => `<article class="game-card"><span>${x.type}</span><h3>${x.name}</h3><p>${x.text}</p><strong>Apuesta inicial sugerida: ${x.bet}</strong></article>`).join('');
+if (el('#patio-games')) el('#patio-games').innerHTML = games.filter(x => x.space === 'PATIO').map(x => `<article class="game-card"><span>${x.type}</span><h3>${x.name}</h3><p>${x.text}</p><strong>Apuesta inicial sugerida: ${x.bet}</strong></article>`).join('');
 el('#auction-list').innerHTML = auctionLots.map(x => `<article class="auction-lot"><div><span>${x.lot} · ${x.kind}</span><h3>${x.name}</h3><p>${x.text}</p></div><strong>${x.opening}</strong></article>`).join('');
 el('#agenda-grid').innerHTML = publicAgenda.map((x, i) => { const week = String(Math.ceil((i + 1) / 3)).padStart(2, '0'); return `<article class="agenda-card"><div class="agenda-meta"><span>${x.day} · SEMANA ${week}</span><span>${x.type}</span></div><h3>${x.title}</h3><p>${x.desc}</p><div class="agenda-opportunity"><b>Ocasión de mérito</b><span>${x.opportunity}</span></div></article>`; }).join('');
 
