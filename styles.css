@@ -210,3 +210,58 @@
 .imperial-edict footer strong{font:italic 15px var(--serif);letter-spacing:0;color:var(--ink)}
 .imperial-edict .edict-seal{display:inline-grid;place-items:center;width:35px;height:35px;border:1px solid var(--gold);color:var(--gold);font:19px var(--serif);margin-left:5px}
 @media(max-width:620px){.imperial-edict{padding:22px 20px 18px}.imperial-edict footer{flex-wrap:wrap;gap:9px}.imperial-edict footer span:first-child{width:100%;text-align:right}}
+
+
+/* Organigramas de Tianming: jerarquía familiar y perfiles consultables */
+.integrated-heading{max-width:780px;margin:3.2rem auto 1.6rem;text-align:center}
+.integrated-heading h3{font:clamp(27px,3vw,38px) var(--serif);font-weight:400;margin:8px 0;color:var(--olive-dark)}
+.integrated-heading p:last-child{font:12px/1.9 var(--serif);color:var(--muted)}
+.dynasty-tree,.house-organigrams{display:grid;gap:30px}
+.tree-chart{border:1px solid var(--line);padding:clamp(16px,3vw,34px);background:linear-gradient(145deg,rgba(235,232,222,.75),rgba(245,243,237,.96))}
+.tree-root{max-width:520px;margin:0 auto;text-align:center}
+.tree-kicker{display:block;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.tree-branch-line{height:30px;width:1px;background:linear-gradient(var(--gold),var(--line));margin:0 auto}
+.tree-branch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
+.tree-branch{min-width:0;border:1px solid var(--line);background:rgba(255,255,255,.35);padding:18px}
+.tree-branch h4{font:19px var(--serif);font-weight:400;margin:0 0 7px;color:var(--olive-dark)}
+.tree-branch>p{font:10px/1.75 var(--serif);color:var(--muted);margin:0 0 15px}
+.tree-people{display:grid;gap:8px}
+.tree-person{display:flex;align-items:center;gap:10px;width:100%;min-width:0;padding:10px;text-align:left;color:var(--ink);background:var(--paper);border:1px solid var(--line);cursor:pointer;transition:border-color .2s,background .2s}
+.tree-person:hover,.tree-person:focus-visible{border-color:var(--gold);background:var(--paper2);outline:none}
+.tree-avatar{display:grid;place-items:center;flex:0 0 38px;width:38px;height:38px;border:1px solid var(--gold);border-radius:50%;font:13px var(--serif);color:var(--olive-dark);background:var(--paper2)}
+.tree-person-copy{display:grid;gap:2px;min-width:0}
+.tree-person-copy strong{font:12px var(--serif);font-weight:400;overflow-wrap:anywhere}
+.tree-person-copy small{font:9px/1.5 var(--sans);color:var(--muted)}
+.tree-open{margin-left:auto;color:var(--gold);font-size:13px}
+.tree-empty{font:11px var(--serif);color:var(--muted);text-align:center;padding:20px}
+.house-organigram{border:1px solid var(--line);background:var(--paper);padding:clamp(18px,3vw,34px)}
+.house-organigram-head{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:25px;align-items:start}
+.house-organigram-head .house-index{display:inline-block;margin-right:14px}
+.house-organigram-head .house-type{float:none;display:inline-block}
+.house-organigram-head h3{font:clamp(27px,3.4vw,40px) var(--serif);font-weight:400;margin:18px 0 12px}
+.house-organigram-head>div:first-child>p{max-width:800px;font:11px/1.9 var(--serif);color:var(--muted);margin:0}
+.house-summary{padding:15px;border-left:1px solid var(--line);display:grid;gap:4px}
+.house-summary span{font-size:8px;letter-spacing:.16em;color:var(--muted)}
+.house-summary strong{font:29px var(--serif);font-weight:400;color:var(--olive-dark)}
+.house-summary small,.house-summary em{font:9px var(--sans);color:var(--muted);font-style:normal}
+.house-summary em{color:var(--gold);margin-top:5px}
+.house-organigram .tree-chart{margin-top:24px}
+.house-organigram .tree-root{max-width:430px}
+.house-organigram-foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:20px;padding-top:13px;font-size:9px;letter-spacing:.04em;color:var(--muted)}
+.house-inventory{margin-top:15px;border-top:1px solid var(--line);padding-top:13px}
+.house-inventory summary{cursor:pointer;font:13px var(--serif);color:var(--olive-dark)}
+.house-inventory>span{display:block;margin-top:14px;font-size:8px;letter-spacing:.15em;color:var(--gold)}
+.house-inventory ul{padding-left:18px;font:10px/1.9 var(--serif);color:var(--muted)}
+.family-view-link{display:inline-block;margin-top:12px;font-size:9px;letter-spacing:.06em;color:var(--olive-dark);border-bottom:1px solid var(--gold);padding-bottom:3px}
+.member-dialog{width:min(620px,calc(100% - 28px));max-width:620px;max-height:85vh;overflow:auto;border:1px solid var(--gold);padding:32px;background:var(--paper);color:var(--ink);box-shadow:0 25px 90px rgba(0,0,0,.35)}
+.member-dialog::backdrop{background:rgba(18,20,16,.72);backdrop-filter:blur(3px)}
+.profile-close{position:sticky;float:right;top:0;border:1px solid var(--line);background:var(--paper2);color:var(--ink);width:32px;height:32px;font-size:20px;cursor:pointer}
+.member-dialog h2{font:clamp(30px,5vw,46px) var(--serif);font-weight:400;margin:10px 0}
+.profile-role{font:13px var(--serif);color:var(--olive);margin:0 0 22px}
+.profile-facts{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;border-top:1px solid var(--line)}
+.profile-facts div{padding:12px 0;border-bottom:1px solid var(--line)}
+.profile-facts dt{font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+.profile-facts dd{font:11px/1.7 var(--serif);margin:5px 0 0;color:var(--ink)}
+.profile-extra{font:11px/1.9 var(--serif);color:var(--muted);margin-top:18px}
+@media(max-width:760px){.tree-branch-grid{grid-template-columns:1fr}.house-organigram-head{grid-template-columns:1fr}.house-summary{border-left:0;border-top:1px solid var(--line);padding:14px 0 0;grid-template-columns:1fr 1fr}.house-summary span{grid-column:1/-1}.house-summary strong{grid-row:2}.house-summary small{align-self:end}.house-summary em{grid-column:1/-1}.house-organigram{padding:17px}.tree-chart{padding:14px}.tree-branch{padding:13px}}
+@media(max-width:480px){.profile-facts{grid-template-columns:1fr}.member-dialog{padding:22px 18px}}
