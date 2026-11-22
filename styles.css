@@ -156,3 +156,17 @@
 .rank-table-wrap>.family-subtag{grid-column:1}
 .reward-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media(max-width:620px){.reward-grid{grid-template-columns:1fr}}
+
+
+/* Registros unificados de personajes dentro de cada casa */
+.house-roster,.house-inventory{margin-top:24px;padding-top:17px;border-top:1px solid var(--line)}
+.house-roster>b,.house-inventory>b{display:block;font:9px var(--sans);letter-spacing:.16em;color:var(--gold);margin-bottom:12px}
+.house-member{padding:10px 0;border-bottom:1px solid var(--line);display:grid;gap:4px}
+.house-member strong{font:15px var(--serif);font-weight:400;color:var(--ink)}
+.house-member span{font:10px var(--sans);color:var(--olive)}
+.house-member small{font:9px/1.6 var(--serif);color:var(--muted)}
+.house-inventory ul{padding-left:17px;margin:0;color:var(--muted);font:10px/1.9 var(--serif)}
+.institution-status{font:8px var(--sans)!important;letter-spacing:.14em;color:var(--gold)!important;margin:4px 0 10px!important}
+.lobby-duty{margin-top:28px}
+.lobby-archive-link{color:#e6ddc7;text-decoration:underline;text-underline-offset:5px;font:10px var(--sans);letter-spacing:.14em}
+.lobby-milestones{margin-top:36px}
