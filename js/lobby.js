@@ -25,7 +25,7 @@ const findMember = id => members.find(person => person.id === id);
 const node = (id, relation) => {
   const person = findMember(id);
   if (!person) return '';
-  const initials = person.name.split(/\\s+/).map(part => part[0]).slice(0,2).join('').toUpperCase();
+  const initials = person.name.split(/\s+/).map(part => part[0]).slice(0,2).join('').toUpperCase();
   return `<button class="tree-person" type="button" data-lobby-person="${esc(id)}"><span class="tree-avatar">${esc(initials)}</span><span class="tree-person-copy"><strong>${esc(person.name)}</strong><small>${esc(relation || person.familyRole || person.occupation)}</small><small>${person.age ? esc(person.age + ' años') : 'Edad no consignada'} · ${esc(person.civilStatus || 'Estado civil pendiente')}</small></span><span class="tree-open">↗</span></button>`;
 };
 const branches = [
