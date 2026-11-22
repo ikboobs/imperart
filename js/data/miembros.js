@@ -16,12 +16,12 @@ export const members = [
   {
     id: 'miya-principe-22', name: 'Príncipe Miya (nombre pendiente)', age: 22, houseId: 'miya-soberana', house: 'Casa Miya',
     civilStatus: 'Pendiente', occupation: 'Formación y ocupación por definir', familyRole: 'Príncipe; descendiente de la emperatriz',
-    branch: 'Línea imperial directa', legitimacy: 'Pendiente de registro', reportsTo: 'Otoha Miya', points: 0, merits: 0
+    branch: 'Línea imperial directa', legitimacy: 'Legítima: descendiente de la unión imperial reconocida', reportsTo: 'Otoha Miya y Aran', points: 0, merits: 0
   },
   {
     id: 'muyao-miya', name: 'Muyao Miya', age: 20, houseId: 'miya-soberana', house: 'Casa Miya',
     civilStatus: 'Soltera', occupation: 'Aprendiz del arte de la espada y otras artes marciales', familyRole: 'Princesa imperial',
-    branch: 'Línea imperial directa', legitimacy: 'Pendiente de registro', reportsTo: 'Otoha Miya y Aran', points: 0, merits: 0
+    branch: 'Línea imperial directa', legitimacy: 'Legítima: descendiente de la unión imperial reconocida', reportsTo: 'Otoha Miya y Aran', points: 0, merits: 0
   },
   {
     id: 'miya-princesa-18', name: 'Princesa Miya (nombre pendiente)', age: 18, houseId: 'miya-soberana', house: 'Casa Miya',
@@ -31,7 +31,7 @@ export const members = [
   {
     id: 'minghao-miya', name: 'MíngHào Miya (明浩)', age: 5, houseId: 'miya-soberana', house: 'Casa Miya',
     civilStatus: 'Soltero', occupation: 'Infancia y formación inicial', familyRole: 'Príncipe imperial; hijo menor de Otoha y Aran',
-    branch: 'Línea imperial directa', legitimacy: 'Pendiente de registro', reportsTo: 'Otoha Miya y Aran',
+    branch: 'Línea imperial directa', legitimacy: 'Legítima: descendiente de la unión imperial reconocida', reportsTo: 'Otoha Miya y Aran',
     extra: 'Su mascota favorita es Gǒu, el tigre que recibió de regalo por su quinto cumpleaños.', points: 0, merits: 0
   },
   {
