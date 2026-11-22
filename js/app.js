@@ -53,7 +53,7 @@ if (familyStandings.length) {
           <p class="family-wealth">${family.wealth}</p>
           <div class="member-list">${familyMembers.map(member => `<span><b>${member.name}</b> · ${member.familyRole || member.occupation} · ${member.points || 0} pts / ${member.merits || 0} méritos</span>`).join('')}</div>
         </div>
-        <div class="family-budget"><strong>${family.budget.toLocaleString('es-CO')}</strong><small>TAELES</small><span>${family.budgetLabel}</span><em>${totalPoints} puntos de casa · ${totalMerits} méritos de casa</em></div>
+        <div class="family-budget"><strong>${family.budget.toLocaleString('es-CO')}</strong><small>TAELES</small><span>Ingreso: ${family.incomeLevel || 'Pendiente'}</span><span>${family.budgetLabel}</span><em>${totalPoints} puntos de casa · ${totalMerits} méritos de casa</em></div>
       </article>`;
   }).join('');
 } else {
