@@ -7,6 +7,7 @@ export const familyStandings = [
     status: 'Casa imperial reinante',
     budget: 50000,
     incomeLevel: 'Muy alto',
+    incomeType: 'Rentas de propiedades privadas, patrimonio heredado y activos familiares',
     budgetLabel: 'Capital familiar disponible',
     housePoints: 0,
     houseMerits: 0,
@@ -23,10 +24,11 @@ export const familyStandings = [
     id: 'yamaguchi',
     name: 'Casa Yamaguchi',
     status: 'Casa de eruditos · servicio imperial',
-    budget: 6000,
-    incomeLevel: 'Alto',
+    budget: 12000,
+    incomeLevel: 'Medio-alto',
+    incomeType: 'Rentas privadas, bienes familiares y actividad erudita; sin incluir fondos del Ministerio de Obras',
     budgetLabel: 'Capital familiar disponible',
-    wealth: 'Alto · ingresos vinculados al servicio ministerial, obras y patrimonio familiar',
+    wealth: 'Medio-alto · patrimonio privado, rentas y bienes de tradición erudita',
     members: [
       { name: 'Tadashi Yamaguchi', position: 'Cabeza de casa · Ministro de Obras', points: 0, merits: 0 },
       { name: 'Kei', position: 'Consorte de Tadashi', points: 0, merits: 0 },
@@ -40,6 +42,7 @@ export const familyStandings = [
     status: 'Casa militar',
     budget: 6000,
     incomeLevel: 'Medio',
+    incomeType: 'Patrimonio residencial, bienes familiares y rentas moderadas; el equipo militar oficial no forma parte de la cuenta privada',
     budgetLabel: 'Capital familiar disponible',
     housePoints: 0,
     houseMerits: 0,
@@ -50,20 +53,22 @@ export const familyStandings = [
     ]
   },
   {
-    id: 'sakusa', name: 'Casa Sakusa', status: 'Casa noble · sucesión familiar por precisar', budget: 0,
-    incomeLevel: 'Pendiente de evaluación',
-    budgetLabel: 'Capital familiar pendiente de registro', housePoints: 0, houseMerits: 0,
-    wealth: 'Por determinar · patrimonio pendiente de registro',
+    id: 'sakusa', name: 'Casa Sakusa', status: 'Casa noble · sucesión familiar por precisar', budget: 12000,
+    incomeLevel: 'Medio-alto',
+    incomeType: 'Rentas de propiedades, patrimonio noble y reservas familiares; separado de la remuneración por servicio militar',
+    budgetLabel: 'Capital familiar disponible', housePoints: 0, houseMerits: 0,
+    wealth: 'Medio-alto · propiedades privadas, rentas y reservas familiares'
     members: [
       { name: 'Sakusa Kiyoomi', position: 'Heredero de la familia Sakusa' },
       { name: 'Sakusa Khaowei', position: 'Antiguo heredero; abdicó de esa condición' }
     ]
   },
   {
-    id: 'akaashi', name: 'Casa Akaashi', status: 'Casa de servicio civil', budget: 0,
-    incomeLevel: 'Pendiente de evaluación',
-    budgetLabel: 'Capital familiar pendiente de registro', housePoints: 0, houseMerits: 0,
-    wealth: 'Por determinar · patrimonio pendiente de registro',
+    id: 'akaashi', name: 'Casa Akaashi', status: 'Casa de servicio civil', budget: 2500,
+    incomeLevel: 'Bajo-medio',
+    incomeType: 'Ingresos modestos por bienes domésticos, rentas menores y patrimonio familiar; el salario del cargo público se registra aparte',
+    budgetLabel: 'Capital familiar disponible', housePoints: 0, houseMerits: 0,
+    wealth: 'Bajo-medio · patrimonio doméstico y rentas limitadas'
     members: [ { name: 'Akaashi Sumire', position: 'Cabeza de casa · Ministerio de Personal' } ]
   }
 ];
