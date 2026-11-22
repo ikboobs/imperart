@@ -57,7 +57,7 @@ export const familyStandings = [
     incomeLevel: 'Medio-alto',
     incomeType: 'Rentas de propiedades, patrimonio noble y reservas familiares; separado de la remuneración por servicio militar',
     budgetLabel: 'Capital familiar disponible', housePoints: 0, houseMerits: 0,
-    wealth: 'Medio-alto · propiedades privadas, rentas y reservas familiares'
+    wealth: 'Medio-alto · propiedades privadas, rentas y reservas familiares',
     members: [
       { name: 'Sakusa Kiyoomi', position: 'Heredero de la familia Sakusa' },
       { name: 'Sakusa Khaowei', position: 'Antiguo heredero; abdicó de esa condición' }
@@ -68,7 +68,7 @@ export const familyStandings = [
     incomeLevel: 'Bajo-medio',
     incomeType: 'Ingresos modestos por bienes domésticos, rentas menores y patrimonio familiar; el salario del cargo público se registra aparte',
     budgetLabel: 'Capital familiar disponible', housePoints: 0, houseMerits: 0,
-    wealth: 'Bajo-medio · patrimonio doméstico y rentas limitadas'
+    wealth: 'Bajo-medio · patrimonio doméstico y rentas limitadas',
     members: [ { name: 'Akaashi Sumire', position: 'Cabeza de casa · Ministerio de Personal' } ]
   }
 ];
