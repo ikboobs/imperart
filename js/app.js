@@ -44,7 +44,6 @@ const showMemberProfile = (member) => {
       <div><dt>Ocupación / dinámica</dt><dd>${esc(member.occupation || 'Pendiente')}</dd></div>
       <div><dt>Rama</dt><dd>${esc(member.branch || 'Pendiente de registro')}</dd></div>
       <div><dt>Filiación</dt><dd>${esc(member.legitimacy || 'Pendiente de registro')}</dd></div>
-      <div><dt>Vínculo / responde a</dt><dd>${esc(member.reportsTo || 'No consignado')}</dd></div>
       <div><dt>Patrocinio</dt><dd>${esc(member.patron || 'No aplica / no consignado')}</dd></div>
       <div><dt>Trayectoria individual</dt><dd>${member.points || 0} puntos · ${member.merits || 0} méritos</dd></div>
     </dl>
@@ -72,7 +71,7 @@ el('#houses-grid').innerHTML = familyBranches.map((family, index) => {
     <article class="house-organigram" id="casa-${esc(family.name.toLowerCase().replace(/^casa\\s+/,'').replace(/[^a-z0-9]+/g,'-'))}">
       <header class="house-organigram-head">
         <div><span class="house-index">0${index + 1}</span><span class="house-type">${esc(family.type)}</span><h3>${esc(family.name)}</h3><p>${esc(family.text)}</p></div>
-        <div class="house-summary"><span>CAPITAL FAMILIAR</span><strong>${(ledger?.budget || 0).toLocaleString('es-CO')}</strong><small>taeles disponibles</small><em>${esc(ledger?.incomeLevel || 'Ingreso pendiente')}</em></div>
+        <div class="house-summary"><span>CAPITAL FAMILIAR</span><strong>${(ledger?.budget || 0).toLocaleString('es-CO')}</strong><small>taeles disponibles</small><em>${esc(ledger?.incomeLevel || 'Ingreso pendiente')}</em><small class="house-income-type">${esc(ledger?.incomeType || 'Fuente de ingresos pendiente')}</small></div>
       </header>
       <section class="genealogy-board" aria-label="Organigrama de ${esc(family.name)}">
         <div class="genealogy-topline"><span>REGISTRO GENEALÓGICO</span><span>${familyMembers.length} INTEGRANTES</span></div>
@@ -122,7 +121,7 @@ if (familyStandings.length) {
           <p class="family-wealth">${family.wealth}</p>
           <a class="family-view-link" href="#casa-${family.id === 'miya-soberana' ? 'casa-miya' : family.id}">Consultar organigrama de la casa ↗</a>
         </div>
-        <div class="family-budget"><strong>${family.budget.toLocaleString('es-CO')}</strong><small>TAELES</small><span>Ingreso: ${family.incomeLevel || 'Pendiente'}</span><span>${family.budgetLabel}</span><em>${totalPoints} puntos de casa · ${totalMerits} méritos de casa</em></div>
+        <div class="family-budget"><strong>${family.budget.toLocaleString('es-CO')}</strong><small>TAELES</small><span>Ingreso: ${family.incomeLevel || 'Pendiente'}</span><span>${family.incomeType || 'Fuente de ingresos pendiente'}</span><span>${family.budgetLabel}</span><em>${totalPoints} puntos de casa · ${totalMerits} méritos de casa</em></div>
       </article>`;
   }).join('');
 } else {
