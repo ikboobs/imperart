@@ -26,7 +26,7 @@ el('#agency-list').innerHTML = agency.map(([title, text], i) => `<div class="age
 const esc = (value = '') => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const memberNode = (member) => `
   <button class="tree-person" type="button" data-member-profile="${esc(member.id)}">
-    <span class="tree-avatar">${esc(member.name.split(/\\s+/).map(part => part[0]).slice(0,2).join('').toUpperCase())}</span>
+    <span class="tree-avatar">${esc(member.name.split(/\s+/).map(part => part[0]).slice(0,2).join('').toUpperCase())}</span>
     <span class="tree-person-copy"><strong>${esc(member.name)}</strong><small>${esc(member.familyRole || member.occupation || 'Integrante')}</small><small>${member.age ? esc(member.age + ' años') : 'Edad no consignada'} · ${esc(member.civilStatus || 'Estado civil pendiente')}</small></span>
     <span class="tree-open">↗</span>
   </button>`;
@@ -64,7 +64,7 @@ el('#houses-grid').innerHTML = familyBranches.map((family, index) => {
   const other = familyMembers.filter(member => !placed.has(member.id));
   const branchPanel = (title, description, list) => list.length ? `<section class="tree-branch"><h4>${title}</h4><p>${description}</p><div class="tree-people">${list.map(memberNode).join('')}</div></section>` : '';
   return `
-    <article class="house-organigram" id="casa-${esc(family.name.toLowerCase().replace(/^casa\\s+/,'').replace(/[^a-z0-9]+/g,'-'))}">
+    <article class="house-organigram" id="casa-${esc(family.name.toLowerCase().replace(/^casa\s+/,'').replace(/[^a-z0-9]+/g,'-'))}">
       <header class="house-organigram-head">
         <div><span class="house-index">0${index + 1}</span><span class="house-type">${esc(family.type)}</span><h3>${esc(family.name)}</h3><p>${esc(family.text)}</p></div>
         <div class="house-summary"><span>CAPITAL FAMILIAR</span><strong>${(familyStandings.find(item => item.name === family.name)?.budget || 0).toLocaleString('es-CO')}</strong><small>taeles disponibles</small><em>${esc(familyStandings.find(item => item.name === family.name)?.incomeLevel || 'Ingreso pendiente')}</em></div>
