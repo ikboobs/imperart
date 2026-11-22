@@ -174,3 +174,15 @@
 .character-template{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--paper);border:1px solid var(--line);padding:22px 25px;margin:16px 0 0;color:var(--ink);font:11px/2 var(--sans)}
 .marriage-record{margin-top:68px;padding-top:35px;border-top:1px solid var(--line)}
 .marriage-record .section-heading h3{font:30px var(--serif);font-weight:400;margin:0}
+
+
+/* Decretos imperiales y listas de economía */
+.decree-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:30px}
+.decree-card{padding:27px 29px;border:1px solid var(--line);background:var(--paper2)}
+.decree-card>span{font:8px var(--sans);letter-spacing:.17em;color:var(--gold)}
+.decree-card h3{font:22px var(--serif);font-weight:400;margin:13px 0 10px}
+.decree-card p{font:11px/1.95 var(--serif);color:var(--muted);margin:0}
+.family-contributions ul{padding-left:19px;margin:12px 0 0;font:11px/1.95 var(--serif);color:var(--muted)}
+.family-contributions li{padding:3px 0}
+.games-economy-block .game-category-heading{margin-top:24px}
+@media(max-width:620px){.decree-grid{grid-template-columns:1fr}.decree-card{padding:22px}}
