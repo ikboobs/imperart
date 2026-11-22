@@ -1,13 +1,37 @@
 export const inventories = [
-  { family: 'Casa Miya · Rama soberana', category: 'PATRIMONIO DE LA CORONA', items: ['Residencias y pabellones reservados a la familia reinante', 'Sellos imperiales, archivos dinásticos y registros de sucesión', 'Joyas ceremoniales, vestiduras y objetos de investidura', 'Tierras, rentas y bienes privados pertenecientes a la casa soberana'] },
-  { family: 'Casa de Generales', category: 'MATERIAL MILITAR Y PATRIMONIO', items: ['Armaduras, espadas, lanzas y arcos de servicio o propiedad familiar', 'Mapas de campaña, rutas y pasos fronterizos', 'Manuales de estrategia, formación y disciplina militar', 'Caballos, equipo de campaña y registros de suministros privados'] },
-  { family: 'Casa de Ritos', category: 'LIBROS Y CEREMONIAL', items: ['Compendios de etiqueta y precedencia', 'Registros de ceremonias y genealogías', 'Textos clásicos y comentarios rituales', 'Instrumentos para música ceremonial'] },
-  { family: 'Casa de Guerra', category: 'DEFENSA Y ESTRATEGIA', items: ['Lanzas y arcos de manufactura reconocida', 'Mapas de rutas y pasos fronterizos', 'Tratados de estrategia y manuales de formación', 'Registros de suministros y equipo'] },
-  { family: 'Casa de Hacienda', category: 'ADMINISTRACIÓN Y ABASTECIMIENTO', items: ['Libros de cuentas y métodos de tasación', 'Modelos de contratos y registros de tributos', 'Pesas, sellos y patrones de medida', 'Tratados de agricultura, obras y transporte'] },
-  { family: 'Casa Mercantil', category: 'COMERCIO Y PATRIMONIO', items: ['Cartas de navegación y rutas comerciales', 'Muestras de tejidos, tintes y porcelana', 'Contratos, pagarés y libros de proveedores', 'Objetos de intercambio y piezas importadas'] },
-  { family: 'Casa de Erudición', category: 'ESTUDIO Y CULTURA', items: ['Manuscritos anotados y tratados históricos', 'Pinceles, tintas y papel de calidad', 'Obras caligráficas y colecciones de poesía', 'Instrumentos de observación y medición'] },
-  { family: 'Casa de Arte', category: 'OBRAS Y PATRONAZGO', items: ['Obras propias y piezas de maestros', 'Bocetos, pigmentos y herramientas', 'Instrumentos musicales y partituras', 'Cartas de patrocinio y certificados de exhibición'] },
-  { family: 'Valle de la Medicina', category: 'SABER MÉDICO', items: ['Herbarios y recetarios', 'Morteros, balanzas y utensilios', 'Registros de tratamientos y observaciones', 'Muestras de plantas y preparados tradicionales'] }
+  {
+    family: 'Casa Miya',
+    category: 'PATRIMONIO DE LA CASA REINANTE',
+    items: [
+      'Residencias familiares y pabellones de uso privado asignados a la casa',
+      'Vestiduras, joyas, mobiliario y objetos ceremoniales de propiedad familiar',
+      'Colecciones, obsequios diplomáticos recibidos a título privado y piezas heredadas',
+      'Rentas y propiedades privadas administradas por la casa',
+      'Los sellos de Estado, archivos oficiales, palacios públicos y tesoro imperial pertenecen a la corona o al Estado, no al capital privado familiar'
+    ]
+  },
+  {
+    family: 'Casa Yamaguchi',
+    category: 'ERUDICIÓN Y SERVICIO IMPERIAL',
+    items: [
+      'Biblioteca familiar con clásicos, comentarios históricos y tratados de estudio',
+      'Manuscritos, cuadernos de anotaciones y colecciones de caligrafía',
+      'Pinceles, tintas, papel, sellos personales y mobiliario de estudio',
+      'Instrumentos de medición y modelos didácticos relacionados con arquitectura e ingeniería',
+      'Propiedades domésticas y rentas privadas; los planos oficiales, presupuestos y expedientes del Ministerio de Obras son bienes del Estado'
+    ]
+  },
+  {
+    family: 'Casa Kageyama',
+    category: 'PATRIMONIO DE TRADICIÓN MILITAR',
+    items: [
+      'Armas, armaduras y equipo de entrenamiento de propiedad familiar',
+      'Caballos, arreos, sillas y equipo ecuestre privado',
+      'Manuales de estrategia, tratados militares y registros familiares de formación',
+      'Propiedades residenciales y espacios privados destinados al entrenamiento',
+      'Las armas de dotación, mapas operativos, registros de tropas y suministros imperiales permanecen bajo custodia del Estado'
+    ]
+  }
 ];
 
 export const auctionLots = [
