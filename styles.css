@@ -136,3 +136,18 @@
 .rank-table-wrap>.family-subtag{grid-column:1/-1;margin:0 0 -14px}
 
 .institution-holder{margin:0 0 9px!important;color:var(--gold)!important;font:9px var(--sans)!important;letter-spacing:.06em}
+
+
+/* Recompensas solicitables y juegos agrupados con la economía familiar. */
+.reward-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:24px}
+.reward-card{padding:22px 24px;border:1px solid var(--line);background:var(--paper2)}
+.reward-card>span{font:8px var(--sans);letter-spacing:.16em;color:var(--gold)}
+.reward-card h3{font:20px var(--serif);font-weight:400;margin:12px 0 8px}
+.reward-card p{font:11px/1.85 var(--serif);color:var(--muted);margin:0}
+.games-economy-block{margin-top:65px;padding-top:35px;border-top:1px solid var(--line)}
+.game-category-heading{font:22px var(--serif);font-weight:400;margin:35px 0 8px}
+.economy-explainer{max-width:850px;font:11px/1.9 var(--serif);color:var(--muted);margin:0 0 20px}
+.family-contributions{margin-top:28px;padding:22px 25px;background:var(--paper2)}
+.family-contributions h3{font:20px var(--serif);font-weight:400;margin:0 0 8px}
+.family-contributions p{font:11px/1.9 var(--serif);color:var(--muted);margin:0}
+@media(max-width:620px){.reward-grid{grid-template-columns:1fr}.games-economy-block{margin-top:45px}.reward-card{padding:20px}}
