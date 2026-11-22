@@ -337,3 +337,19 @@
  .tea-illustration img{mix-blend-mode:screen;opacity:.78}
 }
 @media(prefers-color-scheme:light){:root{color-scheme:light}}
+
+.house-income-type{display:block;max-width:260px;font:9px/1.65 var(--sans)!important;color:var(--muted)!important;margin-top:5px}
+.family-budget>span{display:block;max-width:250px;line-height:1.6}
+@media(prefers-color-scheme:dark){
+ .family-budget>span,.family-budget em,.institution-holder,.institution-status,.house-organigram-foot,.standings-note,.auction-note,.host-note p,.merit-footnote p,.note-box p{color:var(--muted)}
+ .house-income-type{color:var(--muted)!important}
+ .family-contributions,.tea-social-block,.tea-activities,.games-economy-block,.rank-table-wrap,.merit-footnote{color:var(--ink)}
+ .family-contributions p,.family-contributions li,.tea-social-block p,.tea-activities p,.games-economy-block p,.rank-heading p,.merit-footnote p{color:var(--muted)}
+ .family-contributions h3,.tea-social-block h3,.tea-activities h3,.games-economy-block h3,.rank-heading h3{color:var(--ink)}
+ .institution-card p,.institution-card h4,.institution-card .institution-holder{color:var(--muted)}
+ .institution-card h4{color:var(--ink)}
+ .standing-main h3,.standing-main span,.family-wealth,.family-budget strong,.family-budget small{color:var(--ink)}
+ .family-budget{border-color:var(--line)}
+ .imperial-edict,.decree-card,.courtesan-roles article,.auction-lot,.profile-facts div{background:var(--paper);border-color:var(--line);color:var(--ink)}
+ .imperial-edict p,.decree-card p,.courtesan-roles p,.auction-lot p{color:var(--muted)}
+}
