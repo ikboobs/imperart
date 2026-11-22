@@ -200,3 +200,13 @@
 .tea-section .economy-explainer{max-width:850px;font:12px/1.95 var(--serif);color:var(--muted)}
 .tea-section .games-grid{margin-top:18px}
 @media(max-width:620px){.tea-social-block,.tea-activities{margin-top:38px;padding-top:24px}.tea-activities .courtesan-roles article{min-height:0}}
+
+
+/* Proclamaciones imperiales integradas en la crónica */
+.imperial-edicts{display:grid;grid-template-columns:1fr;gap:14px;margin:42px 0 8px}
+.imperial-edict{position:relative;padding:28px 32px 22px;border:1px solid var(--line);background:var(--paper2)}
+.imperial-edict>p{max-width:850px;margin:0;font:13px/2 var(--serif);color:var(--ink)}
+.imperial-edict footer{display:flex;align-items:center;gap:13px;justify-content:flex-end;margin-top:22px;padding-top:14px;border-top:1px solid var(--line);font:9px var(--sans);letter-spacing:.08em;color:var(--muted)}
+.imperial-edict footer strong{font:italic 15px var(--serif);letter-spacing:0;color:var(--ink)}
+.imperial-edict .edict-seal{display:inline-grid;place-items:center;width:35px;height:35px;border:1px solid var(--gold);color:var(--gold);font:19px var(--serif);margin-left:5px}
+@media(max-width:620px){.imperial-edict{padding:22px 20px 18px}.imperial-edict footer{flex-wrap:wrap;gap:9px}.imperial-edict footer span:first-child{width:100%;text-align:right}}
