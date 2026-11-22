@@ -45,7 +45,7 @@ export const auctionLots = [
 
 export const games = [
   { name: 'Ocho', type: 'CARTAS', space: 'SALÓN', points: 1, text: 'Juego de descarte en el que cada participante procura quedarse sin cartas siguiendo el color o número de la carta anterior.' },
-  { name: 'Poker', type: 'CARTAS', space: 'SALÓN', points: 1, text: 'Juego de combinaciones y rondas de apuesta; la lectura de los contrincantes y la administración del capital forman parte de cada partida.' },
+  { name: 'Poker', type: 'CARTAS', space: 'SALÓN', points: 1, text: 'Juego de combinaciones en el que la lectura de los contrincantes y la administración de la mano forman parte de cada partida; en esta modalidad de salón no se establecen apuestas monetarias.' },
   { name: 'Dominó', type: 'ESTRATEGIA', space: 'SALÓN', points: 2, text: 'Los jugadores enlazan fichas por sus extremos coincidentes y anticipan las jugadas rivales.' },
   { name: 'Backgammon', type: 'ESTRATEGIA', space: 'SALÓN', points: 2, text: 'Los jugadores mueven sus fichas según los dados y combinan planificación, cálculo de riesgos y azar.' },
   { name: 'Gin Rummy', type: 'CARTAS', space: 'SALÓN', points: 1, text: 'Se forman grupos y secuencias procurando reducir las cartas que quedan sin combinar.' },
@@ -58,8 +58,8 @@ export const games = [
   { name: 'Picas', type: 'CARTAS', space: 'SALÓN', points: 1, text: 'Juego de bazas por parejas en el que se anuncian las manos que se espera ganar.' },
   { name: 'Dice Party', type: 'AZAR', space: 'SALÓN', points: 1, text: 'Ronda de minijuegos con dados; la modalidad y su puntuación se anuncian antes de comenzar.' },
   { name: 'Truco', type: 'CARTAS', space: 'SALÓN', points: 1, text: 'Juego de bazas en el que los desafíos y la lectura de los rivales forman parte de la partida.' },
-  { name: 'Billar', type: 'PRECISIÓN', space: 'SALÓN', points: 1, text: 'Los participantes golpean las bolas con un taco para introducirlas en las troneras según la modalidad acordada.', bet: '4 taeles' },
-  { name: 'Carrom', type: 'DESTREZA', space: 'SALÓN', points: 1, text: 'Sobre un tablero cuadrado, los jugadores impulsan fichas con un golpe de dedo para introducirlas en las troneras.', bet: '4 taeles' },
+  { name: 'Billar', type: 'PRECISIÓN', space: 'SALÓN', points: 1, text: 'Los participantes golpean las bolas con un taco para introducirlas en las troneras según la modalidad acordada; la victoria se reconoce con puntos de salón, no con una apuesta monetaria.' },
+  { name: 'Carrom', type: 'DESTREZA', space: 'SALÓN', points: 1, text: 'Sobre un tablero cuadrado, los jugadores impulsan fichas con un golpe de dedo para introducirlas en las troneras; la victoria se reconoce con puntos de salón, no con una apuesta monetaria.' },
   { name: 'Bolos', type: 'PRECISIÓN', space: 'PATIO', text: 'Los participantes lanzan una bola por una pista para derribar el mayor número posible de bolos.', bet: '4 taeles' },
   { name: 'Minigolf', type: 'PRECISIÓN', space: 'PATIO', text: 'Los jugadores recorren un circuito de hoyos y obstáculos procurando completar el recorrido con el menor número de golpes.', bet: '4 taeles' },
   { name: 'Fútbol', type: 'EQUIPO', space: 'PATIO', text: 'Dos equipos compiten por llevar el balón hasta la portería contraria; las reglas y la duración se acuerdan antes del encuentro.', bet: '5 taeles' },
