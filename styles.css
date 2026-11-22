@@ -151,3 +151,8 @@
 .family-contributions h3{font:20px var(--serif);font-weight:400;margin:0 0 8px}
 .family-contributions p{font:11px/1.9 var(--serif);color:var(--muted);margin:0}
 @media(max-width:620px){.reward-grid{grid-template-columns:1fr}.games-economy-block{margin-top:45px}.reward-card{padding:20px}}
+
+.rank-table-wrap{grid-template-columns:minmax(0,1fr);gap:22px}
+.rank-table-wrap>.family-subtag{grid-column:1}
+.reward-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:620px){.reward-grid{grid-template-columns:1fr}}
