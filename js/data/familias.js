@@ -22,8 +22,8 @@ export const familyStandings = [
     name: 'Casa Yamaguchi',
     status: 'Casa de eruditos · servicio imperial',
     budget: 6000,
-    budgetLabel: 'Capital privado inicial',
-    wealth: 'Medio · biblioteca familiar, colecciones y patrimonio doméstico',
+    budgetLabel: 'Estipendio alto · servicio civil imperial',
+    wealth: 'Alto · ingresos vinculados al servicio ministerial, obras y patrimonio familiar',
     members: [
       { name: 'Tadashi Yamaguchi', position: 'Cabeza de casa · Ministro de Obras', points: 0, merits: 0 },
       { name: 'Kei', position: 'Consorte de Tadashi', points: 0, merits: 0 },
