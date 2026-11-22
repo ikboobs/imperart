@@ -12,7 +12,6 @@ export const familyStandings = [
     housePoints: 0,
     houseMerits: 0,
     wealth: 'Muy alto · patrimonio privado, rentas y bienes de la casa reinante',
-    incomeLevel: 'Muy alto',
     members: [
       { name: 'Otoha Miya', position: 'Emperatriz reinante · cabeza de la casa', points: 0, merits: 0 },
       { name: 'Aran', position: 'Consorte imperial · antiguo general', points: 0, merits: 0 },
