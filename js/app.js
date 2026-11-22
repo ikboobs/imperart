@@ -23,15 +23,72 @@ el('#institutions-grid').innerHTML = groupOrder.map(group => {
 el('#obediences-list').innerHTML = obediences.map((x, i) => `
   <article class="obedience"><span class="obedience-no">0${i + 1}</span><div><span class="chinese-label">${x.chinese}</span><h3>${x.title}</h3><p>${x.text}</p></div></article>`).join('');
 el('#agency-list').innerHTML = agency.map(([title, text], i) => `<div class="agency-item"><span>0${i + 1}</span><div><b>${title}</b><small>${text}</small></div></div>`).join('');
-el('#houses-grid').innerHTML = familyBranches.map((x, i) => {
-  const key = x.name === 'Casa Miya' ? 'miya-soberana' : x.name.toLowerCase().replace('casa ', '');
-  const roster = members.filter(member => member.houseId === key || member.house === x.name);
-  const inventory = inventories.find(item => item.family === x.name);
-  return `<article class="house-card"><span class="house-index">0${i + 1}</span><span class="house-type">${x.type}</span><h3>${x.name}</h3><p>${x.text}</p>
-    <div class="house-roster"><b>Integrantes registrados</b>${roster.map(member => `<div class="house-member"><strong>${member.name}</strong><span>${member.familyRole || member.occupation}</span><small>${member.age ? member.age + ' años · ' : ''}${member.civilStatus || 'Estado civil pendiente'}</small><small>${member.branch || 'Rama pendiente'} · ${member.legitimacy || 'Filiación pendiente'}</small><small>${member.occupation || 'Ocupación pendiente'}${member.reportsTo ? ' · Responde a: ' + member.reportsTo : ''}${member.patron ? ' · Patrocinio: ' + member.patron : ''}</small><small>${member.points || 0} puntos personales · ${member.merits || 0} méritos personales</small></div>`).join('')}</div>
-    ${inventory ? `<div class="house-inventory"><b>Patrimonio e inventario</b><ul>${inventory.items.map(item => `<li>${item}</li>`).join('')}</ul></div>` : ''}
-  </article>`;
+const esc = (value = '') => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const memberNode = (member) => `
+  <button class="tree-person" type="button" data-member-profile="${esc(member.id)}">
+    <span class="tree-avatar">${esc(member.name.split(/\\s+/).map(part => part[0]).slice(0,2).join('').toUpperCase())}</span>
+    <span class="tree-person-copy"><strong>${esc(member.name)}</strong><small>${esc(member.familyRole || member.occupation || 'Integrante')}</small><small>${member.age ? esc(member.age + ' años') : 'Edad no consignada'} · ${esc(member.civilStatus || 'Estado civil pendiente')}</small></span>
+    <span class="tree-open">↗</span>
+  </button>`;
+const showMemberProfile = (member) => {
+  const dialog = el('#archive-profile-dialog');
+  const content = el('#archive-profile-content');
+  if (!dialog || !content) return;
+  content.innerHTML = `
+    <p class="eyebrow">Registro individual · ${esc(member.house || 'Casa sin registrar')}</p>
+    <h2>${esc(member.name)}</h2>
+    <p class="profile-role">${esc(member.familyRole || member.occupation || 'Integrante')}</p>
+    <dl class="profile-facts">
+      <div><dt>Edad</dt><dd>${member.age ? esc(member.age + ' años') : 'No consignada'}</dd></div>
+      <div><dt>Estado civil</dt><dd>${esc(member.civilStatus || 'Pendiente')}</dd></div>
+      <div><dt>Ocupación / dinámica</dt><dd>${esc(member.occupation || 'Pendiente')}</dd></div>
+      <div><dt>Rama</dt><dd>${esc(member.branch || 'Pendiente de registro')}</dd></div>
+      <div><dt>Filiación</dt><dd>${esc(member.legitimacy || 'Pendiente de registro')}</dd></div>
+      <div><dt>Vínculo / responde a</dt><dd>${esc(member.reportsTo || 'No consignado')}</dd></div>
+      <div><dt>Patrocinio</dt><dd>${esc(member.patron || 'No aplica / no consignado')}</dd></div>
+      <div><dt>Trayectoria individual</dt><dd>${member.points || 0} puntos · ${member.merits || 0} méritos</dd></div>
+    </dl>
+    ${member.extra ? `<p class="profile-extra">${esc(member.extra)}</p>` : ''}`;
+  dialog.showModal();
+};
+el('#houses-grid').innerHTML = familyBranches.map((family, index) => {
+  const familyMembers = members.filter(member => family.name === 'Casa Miya'
+    ? member.houseId === 'miya-soberana' || String(member.houseId || '').startsWith('miya-colateral-')
+    : member.houseId === (family.name.toLowerCase().replace('casa ', '')) || member.house === family.name);
+  const inventory = inventories.find(item => item.family === family.name);
+  const head = familyMembers.find(member => /cabeza|emperatriz reinante/i.test(member.familyRole || member.occupation || ''));
+  const consorts = familyMembers.filter(member => /consorte/i.test(member.familyRole || member.occupation || '') && member.id !== head?.id);
+  const direct = familyMembers.filter(member => /línea imperial directa|rama principal/i.test(member.branch || '') && member.id !== head?.id && !consorts.some(item => item.id === member.id));
+  const collateral = familyMembers.filter(member => /colateral/i.test(member.branch || '') || String(member.houseId || '').startsWith('miya-colateral-'));
+  const placed = new Set([head, ...consorts, ...direct, ...collateral].filter(Boolean).map(member => member.id));
+  const other = familyMembers.filter(member => !placed.has(member.id));
+  const branchPanel = (title, description, list) => list.length ? `<section class="tree-branch"><h4>${title}</h4><p>${description}</p><div class="tree-people">${list.map(memberNode).join('')}</div></section>` : '';
+  return `
+    <article class="house-organigram" id="casa-${esc(family.name.toLowerCase().replace(/[^a-z0-9]+/g,'-'))}">
+      <header class="house-organigram-head">
+        <div><span class="house-index">0${index + 1}</span><span class="house-type">${esc(family.type)}</span><h3>${esc(family.name)}</h3><p>${esc(family.text)}</p></div>
+        <div class="house-summary"><span>CAPITAL FAMILIAR</span><strong>${(familyStandings.find(item => item.name === family.name)?.budget || 0).toLocaleString('es-CO')}</strong><small>taeles disponibles</small><em>${esc(familyStandings.find(item => item.name === family.name)?.incomeLevel || 'Ingreso pendiente')}</em></div>
+      </header>
+      <div class="tree-chart">
+        ${head ? `<div class="tree-root"><span class="tree-kicker">Cabeza de casa</span>${memberNode(head)}</div>` : ''}
+        ${consorts.length ? `<div class="tree-branch-line"></div>${branchPanel('Consorte de casa','Incorporación por vínculo matrimonial',consorts)}` : ''}
+        ${direct.length ? `<div class="tree-branch-line"></div>${branchPanel(family.name === 'Casa Miya' ? 'Descendencia · línea directa' : 'Rama principal','Integrantes registrados en la línea principal',direct)}` : ''}
+        ${collateral.length ? `<div class="tree-branch-line"></div>${branchPanel('Ramas colaterales','Vínculos pertenecientes al linaje, fuera de la línea directa',collateral)}` : ''}
+        ${other.length ? `<div class="tree-branch-line"></div>${branchPanel('Otros integrantes','Posición familiar pendiente de clasificación o registro',other)}` : ''}
+        ${!familyMembers.length ? '<p class="tree-empty">No hay integrantes registrados.</p>' : ''}
+      </div>
+      <footer class="house-organigram-foot"><span>${familyMembers.length} integrantes registrados</span><span>${familyStandings.find(item => item.name === family.name)?.housePoints || 0} puntos de casa · ${familyStandings.find(item => item.name === family.name)?.houseMerits || 0} méritos de casa</span></footer>
+      ${inventory ? `<details class="house-inventory"><summary>Patrimonio e inventario de la casa</summary><span>${esc(inventory.category)}</span><ul>${inventory.items.map(item => `<li>${esc(item)}</li>`).join('')}</ul></details>` : ''}
+    </article>`;
 }).join('');
+document.addEventListener('click', event => {
+  const button = event.target.closest('[data-member-profile]');
+  if (button) {
+    const member = members.find(item => item.id === button.dataset.memberProfile);
+    if (member) showMemberProfile(member);
+  }
+  if (event.target.closest('#archive-profile-dialog .profile-close')) el('#archive-profile-dialog')?.close();
+});
 el('#points-grid').innerHTML = pointTypes.map(x => `<article class="point-card"><div class="point-head"><span>${x.code}</span><b>${x.value}</b></div><h3>${x.title}</h3><p>${x.text}</p></article>`).join('');
 el('#reward-grid').innerHTML = meritRewards.map(x => `<article class="reward-card"><span>${x.merit} ${x.merit === 1 ? 'MÉRITO' : 'MÉRITOS'}</span><h3>${x.title}</h3><p>${x.benefits}</p></article>`).join('');
 // Los inventarios se renderizan dentro de la ficha de cada casa, no en Economía.
@@ -51,7 +108,7 @@ if (familyStandings.length) {
         <div class="standing-main">
           <h3>${family.name}</h3><span>${family.status} · ${familyMembers.length} integrantes</span>
           <p class="family-wealth">${family.wealth}</p>
-          <div class="member-list">${familyMembers.map(member => `<span><b>${member.name}</b> · ${member.familyRole || member.occupation} · ${member.points || 0} pts / ${member.merits || 0} méritos</span>`).join('')}</div>
+          <a class="family-view-link" href="#casa-${family.id === 'miya-soberana' ? 'casa-miya' : family.id}">Consultar organigrama de la casa ↗</a>
         </div>
         <div class="family-budget"><strong>${family.budget.toLocaleString('es-CO')}</strong><small>TAELES</small><span>Ingreso: ${family.incomeLevel || 'Pendiente'}</span><span>${family.budgetLabel}</span><em>${totalPoints} puntos de casa · ${totalMerits} méritos de casa</em></div>
       </article>`;
