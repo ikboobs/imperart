@@ -1,6 +1,6 @@
 import { dynastyStory, familyBranches } from './data/dinastia.js';
 import { institutions, obediences, agency } from './data/instituciones.js';
-import { pointTypes, rankLadder, decorumRules } from './data/meritos.js';
+import { pointTypes, meritRewards, decorumRules } from './data/meritos.js';
 import { inventories, auctionLots, games } from './data/economia.js';
 import { publicAgenda } from './data/agenda.js';
 import { familyStandings } from './data/familias.js';
@@ -23,25 +23,26 @@ el('#obediences-list').innerHTML = obediences.map((x, i) => `
 el('#agency-list').innerHTML = agency.map(([title, text], i) => `<div class="agency-item"><span>0${i + 1}</span><div><b>${title}</b><small>${text}</small></div></div>`).join('');
 el('#houses-grid').innerHTML = familyBranches.map((x, i) => `<article class="house-card"><span class="house-index">0${i + 1}</span><span class="house-type">${x.type}</span><h3>${x.name}</h3><p>${x.text}</p></article>`).join('');
 el('#points-grid').innerHTML = pointTypes.map(x => `<article class="point-card"><div class="point-head"><span>${x.code}</span><b>${x.value}</b></div><h3>${x.title}</h3><p>${x.text}</p></article>`).join('');
-el('#rank-table').innerHTML = rankLadder.map((x, i) => `<div class="rank-row"><span class="rank-no">0${i + 1}</span><b>${x.rank}</b><span class="rank-merit">${x.merit}</span><p>${x.reach}</p></div>`).join('');
+el('#reward-grid').innerHTML = meritRewards.map(x => `<article class="reward-card"><span>${x.merit} ${x.merit === 1 ? 'MÉRITO' : 'MÉRITOS'}</span><h3>${x.title}</h3><p>${x.benefits}</p></article>`).join('');
 el('#inventory-grid').innerHTML = inventories.map((x, i) => `<article class="inventory-card"><span>INVENTARIO · 0${i + 1}</span><h3>${x.family}</h3><small>${x.category}</small><ul>${x.items.map(item => `<li>${item}</li>`).join('')}</ul></article>`).join('');
-el('#games-grid').innerHTML = games.map(x => `<article class="game-card"><span>${x.type}</span><h3>${x.name}</h3><p>${x.text}</p><strong>Apuesta sugerida: ${x.bet}</strong></article>`).join('');
+el('#salon-games').innerHTML = games.filter(x => x.space === 'SALÓN' && x.points).map(x => `<article class="game-card"><span>${x.type}</span><h3>${x.name}</h3><p>${x.text}</p><strong>${x.points} ${x.points === 1 ? 'punto' : 'puntos'} por partida ganada</strong></article>`).join('');
+el('#patio-games').innerHTML = games.filter(x => x.space === 'PATIO').map(x => `<article class="game-card"><span>${x.type}</span><h3>${x.name}</h3><p>${x.text}</p><strong>Apuesta inicial sugerida: ${x.bet}</strong></article>`).join('');
 el('#auction-list').innerHTML = auctionLots.map(x => `<article class="auction-lot"><div><span>${x.lot} · ${x.kind}</span><h3>${x.name}</h3><p>${x.text}</p></div><strong>${x.opening}</strong></article>`).join('');
 el('#agenda-grid').innerHTML = publicAgenda.map((x, i) => { const week = String(Math.ceil((i + 1) / 3)).padStart(2, '0'); return `<article class="agenda-card"><div class="agenda-meta"><span>${x.day} · SEMANA ${week}</span><span>${x.type}</span></div><h3>${x.title}</h3><p>${x.desc}</p><div class="agenda-opportunity"><b>Ocasión de mérito</b><span>${x.opportunity}</span></div></article>`; }).join('');
 
 if (familyStandings.length) {
   el('#standings').innerHTML = familyStandings.map((family, i) => {
-    const totalPoints = family.members.reduce((sum, member) => sum + member.points, 0);
-    const totalMerits = family.members.reduce((sum, member) => sum + member.merits, 0);
+    const totalPoints = family.housePoints || 0;
+    const totalMerits = family.houseMerits || Math.floor(totalPoints / 10);
     return `
       <article class="standing family-record">
         <div class="standing-rank">0${i + 1}</div>
         <div class="standing-main">
           <h3>${family.name}</h3><span>${family.status} · ${family.members.length} integrantes</span>
           <p class="family-wealth">${family.wealth}</p>
-          <div class="member-list">${family.members.map(member => `<span><b>${member.name}</b> · ${member.position} · ${member.points} pts · ${member.merits} méritos</span>`).join('')}</div>
+          <div class="member-list">${family.members.map(member => `<span><b>${member.name}</b> · ${member.position}</span>`).join('')}</div>
         </div>
-        <div class="family-budget"><strong>${family.budget.toLocaleString('es-CO')}</strong><small>TAELES</small><span>${family.budgetLabel}</span><em>${totalPoints} puntos · ${totalMerits} méritos</em></div>
+        <div class="family-budget"><strong>${family.budget.toLocaleString('es-CO')}</strong><small>TAELES</small><span>${family.budgetLabel}</span><em>${totalPoints} puntos de casa · ${totalMerits} méritos de casa</em></div>
       </article>`;
   }).join('');
 } else {
