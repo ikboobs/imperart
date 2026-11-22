@@ -54,7 +54,8 @@ const showMemberProfile = (member) => {
 el('#houses-grid').innerHTML = familyBranches.map((family, index) => {
   const familyMembers = members.filter(member => family.name === 'Casa Miya'
     ? member.houseId === 'miya-soberana' || String(member.houseId || '').startsWith('miya-colateral-')
-    : member.houseId === (family.name.toLowerCase().replace('casa ', '')) || member.house === family.name);
+    : member.houseId === family.name.toLowerCase().replace('casa ', '') || member.house === family.name);
+  const ledger = familyStandings.find(item => item.name === family.name);
   const inventory = inventories.find(item => item.family === family.name);
   const head = familyMembers.find(member => /cabeza|emperatriz reinante/i.test(member.familyRole || member.occupation || ''));
   const consorts = familyMembers.filter(member => /consorte/i.test(member.familyRole || member.occupation || '') && member.id !== head?.id);
@@ -62,23 +63,34 @@ el('#houses-grid').innerHTML = familyBranches.map((family, index) => {
   const collateral = familyMembers.filter(member => /colateral/i.test(member.branch || '') || String(member.houseId || '').startsWith('miya-colateral-'));
   const placed = new Set([head, ...consorts, ...direct, ...collateral].filter(Boolean).map(member => member.id));
   const other = familyMembers.filter(member => !placed.has(member.id));
-  const branchPanel = (title, description, list) => list.length ? `<section class="tree-branch"><h4>${title}</h4><p>${description}</p><div class="tree-people">${list.map(memberNode).join('')}</div></section>` : '';
+  const branchPanel = (title, description, list, className = '') => list.length ? `
+    <section class="genealogy-branch ${className}">
+      <div class="genealogy-branch-heading"><span></span><div><h4>${title}</h4><p>${description}</p></div><span></span></div>
+      <div class="genealogy-children">${list.map(memberNode).join('')}</div>
+    </section>` : '';
   return `
-    <article class="house-organigram" id="casa-${esc(family.name.toLowerCase().replace(/^casa\s+/,'').replace(/[^a-z0-9]+/g,'-'))}">
+    <article class="house-organigram" id="casa-${esc(family.name.toLowerCase().replace(/^casa\\s+/,'').replace(/[^a-z0-9]+/g,'-'))}">
       <header class="house-organigram-head">
         <div><span class="house-index">0${index + 1}</span><span class="house-type">${esc(family.type)}</span><h3>${esc(family.name)}</h3><p>${esc(family.text)}</p></div>
-        <div class="house-summary"><span>CAPITAL FAMILIAR</span><strong>${(familyStandings.find(item => item.name === family.name)?.budget || 0).toLocaleString('es-CO')}</strong><small>taeles disponibles</small><em>${esc(familyStandings.find(item => item.name === family.name)?.incomeLevel || 'Ingreso pendiente')}</em></div>
+        <div class="house-summary"><span>CAPITAL FAMILIAR</span><strong>${(ledger?.budget || 0).toLocaleString('es-CO')}</strong><small>taeles disponibles</small><em>${esc(ledger?.incomeLevel || 'Ingreso pendiente')}</em></div>
       </header>
-      <div class="tree-chart">
-        ${head ? `<div class="tree-root"><span class="tree-kicker">Cabeza de casa</span>${memberNode(head)}</div>` : ''}
-        ${consorts.length ? `<div class="tree-branch-line"></div>${branchPanel('Consorte de casa','Incorporación por vínculo matrimonial',consorts)}` : ''}
-        ${direct.length ? `<div class="tree-branch-line"></div>${branchPanel(family.name === 'Casa Miya' ? 'Descendencia · línea directa' : 'Rama principal','Integrantes registrados en la línea principal',direct)}` : ''}
-        ${collateral.length ? `<div class="tree-branch-line"></div>${branchPanel('Ramas colaterales','Vínculos pertenecientes al linaje, fuera de la línea directa',collateral)}` : ''}
-        ${other.length ? `<div class="tree-branch-line"></div>${branchPanel('Otros integrantes','Posición familiar pendiente de clasificación o registro',other)}` : ''}
+      <section class="genealogy-board" aria-label="Organigrama de ${esc(family.name)}">
+        <div class="genealogy-topline"><span>REGISTRO GENEALÓGICO</span><span>${familyMembers.length} INTEGRANTES</span></div>
+        ${head ? `<div class="genealogy-root">${memberNode(head)}</div>` : ''}
+        ${consorts.length ? `
+          <div class="genealogy-connector"><span></span><small>UNIÓN FAMILIAR</small><span></span></div>
+          <div class="genealogy-partners">${consorts.map(memberNode).join('')}</div>` : ''}
+        ${direct.length ? branchPanel(family.name === 'Casa Miya' ? 'Descendencia directa' : 'Rama principal', 'Vínculos registrados en la línea familiar', direct, 'direct-branch') : ''}
+        ${collateral.length ? branchPanel('Ramas colaterales', 'Integrantes pertenecientes a otras ramas del linaje', collateral, 'collateral-branch') : ''}
+        ${other.length ? branchPanel('Otros integrantes', 'Posición familiar pendiente de clasificación', other, 'other-branch') : ''}
         ${!familyMembers.length ? '<p class="tree-empty">No hay integrantes registrados.</p>' : ''}
-      </div>
-      <footer class="house-organigram-foot"><span>${familyMembers.length} integrantes registrados</span><span>${familyStandings.find(item => item.name === family.name)?.housePoints || 0} puntos de casa · ${familyStandings.find(item => item.name === family.name)?.houseMerits || 0} méritos de casa</span></footer>
-      ${inventory ? `<details class="house-inventory"><summary>Patrimonio e inventario de la casa</summary><span>${esc(inventory.category)}</span><ul>${inventory.items.map(item => `<li>${esc(item)}</li>`).join('')}</ul></details>` : ''}
+      </section>
+      <footer class="house-organigram-foot"><span>${familyMembers.length} integrantes registrados</span><span>${ledger?.housePoints || 0} puntos de casa · ${ledger?.houseMerits || 0} méritos de casa</span></footer>
+      ${inventory ? `
+        <section class="house-inventory-panel">
+          <div class="inventory-heading"><span class="eyebrow">PATRIMONIO FAMILIAR</span><h4>Capital e inventario</h4><p>${esc(inventory.category)}</p></div>
+          <ul>${inventory.items.map(item => `<li>${esc(item)}</li>`).join('')}</ul>
+        </section>` : ''}
     </article>`;
 }).join('');
 document.addEventListener('click', event => {
