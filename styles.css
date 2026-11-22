@@ -186,3 +186,17 @@
 .family-contributions li{padding:3px 0}
 .games-economy-block .game-category-heading{margin-top:24px}
 @media(max-width:620px){.decree-grid{grid-template-columns:1fr}.decree-card{padding:22px}}
+
+
+/* Organización de la sección de establecimientos y entretenimiento */
+.tea-social-block,.tea-activities{margin-top:54px;padding-top:30px;border-top:1px solid var(--line)}
+.tea-social-block h3{font:clamp(25px,3vw,34px) var(--serif);font-weight:400;margin:12px 0 18px}
+.tea-social-block p{max-width:880px;font:12px/2 var(--serif);color:var(--muted);margin:0 0 13px}
+.tea-activities .courtesan-roles{margin-top:22px}
+.tea-activities .courtesan-roles article{min-height:180px}
+.tea-section .games-economy-block{margin-top:55px;padding-top:32px;border-top:1px solid var(--line)}
+.tea-section .game-category-heading{margin-top:28px}
+.tea-section .game-category-heading:first-of-type{margin-top:20px}
+.tea-section .economy-explainer{max-width:850px;font:12px/1.95 var(--serif);color:var(--muted)}
+.tea-section .games-grid{margin-top:18px}
+@media(max-width:620px){.tea-social-block,.tea-activities{margin-top:38px;padding-top:24px}.tea-activities .courtesan-roles article{min-height:0}}
