@@ -24,42 +24,32 @@ el('#obediences-list').innerHTML = obediences.map((x, i) => `
   <article class="obedience"><span class="obedience-no">0${i + 1}</span><div><span class="chinese-label">${x.chinese}</span><h3>${x.title}</h3><p>${x.text}</p></div></article>`).join('');
 el('#agency-list').innerHTML = agency.map(([title, text], i) => `<div class="agency-item"><span>0${i + 1}</span><div><b>${title}</b><small>${text}</small></div></div>`).join('');
 const esc = (value = '') => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
-const memberNode = (member) => `
-  <button class="tree-person" type="button" data-member-profile="${esc(member.id)}">
-    <span class="tree-avatar">${esc(member.name.split(/\s+/).map(part => part[0]).slice(0,2).join('').toUpperCase())}</span>
-    <span class="tree-person-copy"><strong>${esc(member.name)}</strong><small>${esc(member.familyRole || member.occupation || 'Integrante')}</small><small>${member.age ? esc(member.age + ' años') : 'Edad no consignada'} · ${esc(member.civilStatus || 'Estado civil pendiente')}</small></span>
-    <span class="tree-open">↗</span>
-  </button>`;
-const showMemberProfile = (member) => {
-  const dialog = el('#archive-profile-dialog');
-  const content = el('#archive-profile-content');
-  if (!dialog || !content) return;
-  content.innerHTML = `
-    <p class="eyebrow">Registro individual · ${esc(member.house || 'Casa sin registrar')}</p>
-    <h2>${esc(member.name)}</h2>
-    <p class="profile-role">${esc(member.familyRole || member.occupation || 'Integrante')}</p>
-    <dl class="profile-facts">
-      <div><dt>Edad</dt><dd>${member.age ? esc(member.age + ' años') : 'No consignada'}</dd></div>
-      <div><dt>Estado civil</dt><dd>${esc(member.civilStatus || 'Pendiente')}</dd></div>
-      <div><dt>Ocupación / dinámica</dt><dd>${esc(member.occupation || 'Pendiente')}</dd></div>
-      <div><dt>Rama</dt><dd>${esc(member.branch || 'Pendiente de registro')}</dd></div>
-      <div><dt>Filiación</dt><dd>${esc(member.legitimacy || 'Pendiente de registro')}</dd></div>
-      <div><dt>Patrocinio</dt><dd>${esc(member.patron || 'No aplica / no consignado')}</dd></div>
-      <div><dt>Trayectoria individual</dt><dd>${member.points || 0} puntos · ${member.merits || 0} méritos</dd></div>
-    </dl>
-    ${member.extra ? `<p class="profile-extra">${esc(member.extra)}</p>` : ''}`;
-  dialog.showModal();
+const memberNode = (member) => {
+  const details = [
+    member.familyRole || member.occupation || 'Integrante',
+    member.age ? member.age + ' años' : 'Edad no consignada',
+    member.civilStatus || 'Estado civil pendiente',
+    member.occupation || '',
+    member.branch || ''
+  ].filter(Boolean);
+  return `
+    <article class="tree-person">
+      <div class="tree-person-copy">
+        <strong>${esc(member.name)}</strong>
+        <small>${details.map(esc).join(' · ')}</small>
+      </div>
+    </article>`;
 };
 el('#houses-grid').innerHTML = familyBranches.map((family, index) => {
   const familyMembers = members.filter(member => family.name === 'Casa Miya'
-    ? member.houseId === 'miya-soberana' || String(member.houseId || '').startsWith('miya-colateral-')
+    ? member.houseId === 'miya-soberana'
     : member.houseId === family.name.toLowerCase().replace('casa ', '') || member.house === family.name);
   const ledger = familyStandings.find(item => item.name === family.name);
   const inventory = inventories.find(item => item.family === family.name);
   const head = familyMembers.find(member => /cabeza|emperatriz reinante/i.test(member.familyRole || member.occupation || ''));
   const consorts = familyMembers.filter(member => /consorte/i.test(member.familyRole || member.occupation || '') && member.id !== head?.id);
   const direct = familyMembers.filter(member => /línea imperial directa|rama principal/i.test(member.branch || '') && member.id !== head?.id && !consorts.some(item => item.id === member.id));
-  const collateral = familyMembers.filter(member => /colateral/i.test(member.branch || '') || String(member.houseId || '').startsWith('miya-colateral-'));
+  const collateral = family.name === 'Casa Miya' ? [] : familyMembers.filter(member => /colateral/i.test(member.branch || '') || String(member.houseId || '').startsWith('miya-colateral-'));
   const placed = new Set([head, ...consorts, ...direct, ...collateral].filter(Boolean).map(member => member.id));
   const other = familyMembers.filter(member => !placed.has(member.id));
   const branchPanel = (title, description, list, className = '') => list.length ? `
@@ -112,7 +102,7 @@ if (familyStandings.length) {
   el('#standings').innerHTML = familyStandings.map((family, i) => {
     const totalPoints = family.housePoints || 0;
     const totalMerits = family.houseMerits || Math.floor(totalPoints / 10);
-    const familyMembers = members.filter(member => family.id === 'miya-soberana' ? member.houseId === 'miya-soberana' || String(member.houseId || '').startsWith('miya-colateral-') : member.houseId === family.id || member.house === family.name);
+    const familyMembers = members.filter(member => family.id === 'miya-soberana' ? member.houseId === 'miya-soberana' : member.houseId === family.id || member.house === family.name);
     return `
       <article class="standing family-record">
         <div class="standing-rank">0${i + 1}</div>
