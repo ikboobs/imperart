@@ -404,3 +404,10 @@
  .lobby-points .point-card{background:var(--paper);border-color:var(--line)}
  .economy-more{color:var(--muted)}
 }
+
+/* Organigramas sin retratos ni fichas emergentes: nombre y datos en lectura directa */
+.tree-person{display:block;cursor:default;transition:border-color .2s,background .2s}
+.tree-person:hover,.tree-person:focus-visible{border-color:var(--line);background:var(--paper);outline:none}
+.tree-person-copy{display:grid;gap:5px;min-width:0}
+.tree-person-copy strong{font:14px var(--serif);font-weight:400;color:var(--ink);overflow-wrap:anywhere}
+.tree-person-copy small{font:10px/1.7 var(--sans);color:var(--muted);white-space:normal}
