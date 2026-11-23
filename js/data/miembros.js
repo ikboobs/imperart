@@ -91,7 +91,13 @@ export const members = [
     id: 'sakusa-kiyoomi', name: 'Sakusa Kiyoomi', age: 40, houseId: 'sakusa', house: 'Casa Sakusa',
     civilStatus: 'Comprometido con Morisuke Yaku', occupation: 'Funcionario del Ministerio de Justicia', familyRole: 'Heredero de la familia Sakusa',
     branch: 'Rama heredera por confirmar', legitimacy: 'Pendiente de registro', points: 0, merits: 0
+  },
+  {
+    id: 'bokuto-kotaro', name: 'Bokuto Kotaro', age: 22, houseId: 'bokuto', house: 'Casa Bokuto',
+    civilStatus: 'Comprometido', occupation: 'Erudito', familyRole: 'Integrante de la Casa Bokuto',
+    branch: 'Rama familiar por confirmar', legitimacy: 'Pendiente de registro', points: 0, merits: 0
   }
+
 ];
 
 export const getMember = (id) => members.find(member => member.id === id);
