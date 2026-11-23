@@ -8,7 +8,7 @@ export const members = [
     reportsTo: null, patron: null, points: 0, merits: 0, housePoints: 0, houseMerits: 0
   },
   {
-    id: 'aran-miya', name: 'Aran', age: null, houseId: 'miya-soberana', house: 'Casa Miya',
+    id: 'aran-miya', name: 'Aran Ojiro', age: 46, houseId: 'miya-soberana', house: 'Casa Miya',
     civilStatus: 'Casado con Otoha Miya', occupation: 'Consorte imperial; antiguo general', familyRole: 'Consorte de la casa soberana',
     branch: 'Incorporado por matrimonio a la línea imperial', legitimacy: 'No aplica: vínculo por matrimonio',
     reportsTo: 'Otoha Miya', patron: null, points: 0, merits: 0, housePoints: 0, houseMerits: 0
@@ -29,7 +29,7 @@ export const members = [
     branch: 'Línea imperial directa', legitimacy: 'Pendiente de registro', reportsTo: 'Otoha Miya', points: 0, merits: 0
   },
   {
-    id: 'minghao-miya', name: 'MíngHào Miya (明浩)', age: 5, houseId: 'miya-soberana', house: 'Casa Miya',
+    id: 'minghao-miya', name: 'Minghào Miya', age: 5, houseId: 'miya-soberana', house: 'Casa Miya',
     civilStatus: 'Soltero', occupation: 'Infancia y formación inicial', familyRole: 'Príncipe imperial; hijo menor de Otoha y Aran',
     branch: 'Línea imperial directa', legitimacy: 'Legítima: descendiente de la unión imperial reconocida', reportsTo: 'Otoha Miya y Aran',
     extra: 'Su mascota favorita es Gǒu, el tigre que recibió de regalo por su quinto cumpleaños.', points: 0, merits: 0
@@ -65,8 +65,8 @@ export const members = [
     branch: 'Rama principal', legitimacy: 'Pendiente de registro', reportsTo: 'Tadashi Yamaguchi', points: 0, merits: 0
   },
   {
-    id: 'tobio-kageyama', name: 'Tobio Kageyama', age: null, houseId: 'kageyama', house: 'Casa Kageyama',
-    civilStatus: 'Pendiente', occupation: 'General', familyRole: 'Cabeza de familia',
+    id: 'tobio-kageyama', name: 'Tobio Kageyama', age: 35, houseId: 'kageyama', house: 'Casa Kageyama',
+    civilStatus: 'Soltero', occupation: 'General', familyRole: 'Cabeza de familia',
     branch: 'Rama principal', legitimacy: 'Pendiente de registro', points: 0, merits: 0
   },
   {
@@ -89,7 +89,7 @@ export const members = [
   },
   {
     id: 'sakusa-kiyoomi', name: 'Sakusa Kiyoomi', age: 40, houseId: 'sakusa', house: 'Casa Sakusa',
-    civilStatus: 'Comprometido con Morisuke Yaku', occupation: 'Ocupación por confirmar', familyRole: 'Heredero de la familia Sakusa',
+    civilStatus: 'Comprometido con Morisuke Yaku', occupation: 'Funcionario del Ministerio de Justicia', familyRole: 'Heredero de la familia Sakusa',
     branch: 'Rama heredera por confirmar', legitimacy: 'Pendiente de registro', points: 0, merits: 0
   }
 ];
