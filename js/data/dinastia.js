@@ -1,8 +1,9 @@
 export const dynastyStory = [
-  `La antigua dinastía tuvo muchos descendientes; tres hermanos, nacidos de los mismos padres, crecieron unidos y fueron conocidos como las Tres Estrellas. La muerte del soberano abrió una disputa por el trono: las casas nobles tomaron partido, los funcionarios se dividieron y varios miembros del linaje murieron durante el conflicto.
-
-  Otoha sobrevivió a aquella lucha y consiguió el respaldo de las instituciones y de las casas que buscaban recuperar la estabilidad. No heredó el trono de manera automática: fue reconocida como soberana por el apoyo político que reunió y por la confianza depositada en su capacidad para gobernar. Su ascenso marcó el inicio de una nueva etapa para el Imperio.`
+  'La antigua dinastía tuvo muchos descendientes; tres hermanos, nacidos de los mismos padres, crecieron unidos y fueron conocidos como las Tres Estrellas. La muerte del soberano abrió una disputa por el trono: las casas nobles tomaron partido, los funcionarios se dividieron y varios miembros del linaje murieron durante el conflicto.',
+  'Otoha sobrevivió a aquella lucha y consiguió el respaldo de las instituciones y de las casas que buscaban recuperar la estabilidad. No heredó el trono de manera automática: fue reconocida como soberana por el apoyo político que reunió y por la confianza depositada en su capacidad para gobernar. Su ascenso marcó el inicio de una nueva etapa para el Imperio.'
 ];
+
+
 
 export const familyBranches = [
   { name: 'Casa Miya', type: 'CASA IMPERIAL REINANTE', text: 'Otoha Miya encabeza la casa y gobierna como emperatriz. Aran se incorporó por matrimonio y es su único consorte; acompaña a la soberana, pero no comparte el trono. Sus cuatro descendientes forman la línea directa. Osamu y Atsumu pertenecen a ramas colaterales y conservan el rango de príncipes, sin autoridad automática sobre el gobierno. El patrimonio privado de la familia se mantiene separado de los bienes de la Corona y del Estado.' },
