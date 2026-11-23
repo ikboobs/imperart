@@ -16,7 +16,6 @@ export const familyStandings = [
       { name: 'Otoha Miya', position: 'Emperatriz reinante · cabeza de la casa', points: 0, merits: 0 },
       { name: 'Aran', position: 'Consorte imperial · antiguo general', points: 0, merits: 0 },
       { name: 'Cuatro hijos imperiales', position: 'Descendencia de la soberana · nombres pendientes', points: 0, merits: 0 },
-      { name: 'Osamu Miya y Atsumu Miya', position: 'Príncipes imperiales · ramas colaterales', points: 0, merits: 0 }
     ]
   },
   {
