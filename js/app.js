@@ -82,14 +82,6 @@ el('#houses-grid').innerHTML = familyBranches.map((family, index) => {
         </section>` : ''}
     </article>`;
 }).join('');
-document.addEventListener('click', event => {
-  const button = event.target.closest('[data-member-profile]');
-  if (button) {
-    const member = members.find(item => item.id === button.dataset.memberProfile);
-    if (member) showMemberProfile(member);
-  }
-  if (event.target.closest('#archive-profile-dialog .profile-close')) el('#archive-profile-dialog')?.close();
-});
 el('#points-grid').innerHTML = pointTypes.map(x => `<article class="point-card"><div class="point-head"><span>${x.code}</span><b>${x.value}</b></div><h3>${x.title}</h3><p>${x.text}</p></article>`).join('');
 el('#reward-grid').innerHTML = meritRewards.map(x => `<article class="reward-card"><span>${x.merit} ${x.merit === 1 ? 'MÉRITO' : 'MÉRITOS'}</span><h3>${x.title}</h3><p>${x.benefits}</p></article>`).join('');
 // Los inventarios se renderizan dentro de la ficha de cada casa, no en Economía.
