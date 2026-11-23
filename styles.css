@@ -353,3 +353,54 @@
  .imperial-edict,.decree-card,.courtesan-roles article,.auction-lot,.profile-facts div{background:var(--paper);border-color:var(--line);color:var(--ink)}
  .imperial-edict p,.decree-card p,.courtesan-roles p,.auction-lot p{color:var(--muted)}
 }
+
+
+/* Jerarquía editorial del Lobby: sociedad, familia, economía y méritos */
+.milestone-section{margin:48px 0 18px;padding-top:28px;border-top:1px solid var(--line)}
+.milestone-title{font:clamp(23px,3vw,32px) var(--serif);font-weight:400;margin:10px 0}
+.milestone-intro{max-width:850px;font:12px/1.95 var(--serif);color:var(--muted);margin:0}
+.lobby-milestones{margin-top:22px}
+.family-life-section{background:var(--paper2);max-width:none;padding-left:max(7%,calc((100% - 1240px)/2));padding-right:max(7%,calc((100% - 1240px)/2))}
+.family-principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px}
+.family-principles article{padding:24px 25px;border:1px solid var(--line);background:var(--paper)}
+.family-principles article>span{font:8px var(--sans);letter-spacing:.16em;color:var(--gold)}
+.family-principles h3{font:20px var(--serif);font-weight:400;margin:14px 0 9px}
+.family-principles p{font:11px/1.9 var(--serif);color:var(--muted);margin:0}
+.social-venues{margin-top:36px}
+.economy-overview{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.economy-column{min-width:0;padding:28px;border:1px solid var(--line);background:var(--paper2)}
+.economy-column>.family-subtag{margin:0 0 12px}
+.economy-column>h3{font:clamp(24px,3vw,32px) var(--serif);font-weight:400;margin:0 0 17px}
+.economy-column>p{font:12px/1.95 var(--serif);color:var(--muted);margin:0 0 15px}
+.economy-note{margin-top:22px}
+.merit-column .merit-intro{grid-template-columns:110px 1fr;gap:20px;padding:20px;margin:22px 0}
+.merit-column .merit-number strong{font-size:54px}
+.merit-column .merit-intro h4{font:17px var(--serif);font-weight:400;margin:0 0 6px}
+.merit-column .merit-intro p{font:10px/1.8 var(--serif);color:var(--muted);margin:0}
+.lobby-points{grid-template-columns:1fr 1fr;border-top:0;border-left:0;gap:0}
+.lobby-points .point-card{border:1px solid var(--line);padding:16px;margin:-.5px 0 0 -.5px}
+.lobby-points .point-card h4{font:15px var(--serif);font-weight:400;margin:16px 0 7px}
+.lobby-points .point-card p{font:10px/1.8 var(--serif);color:var(--muted);margin:0}
+.lobby-points .point-head{font-size:9px}
+.economy-more{font:10px/1.8 var(--sans)!important;margin-top:18px!important}
+@media(max-width:900px){
+ .economy-overview{grid-template-columns:1fr}
+ .family-principles{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+ .family-principles{grid-template-columns:1fr}
+ .economy-column{padding:21px 18px}
+ .merit-column .merit-intro{grid-template-columns:82px 1fr;gap:14px}
+ .merit-column .merit-number strong{font-size:45px}
+ .lobby-points{grid-template-columns:1fr}
+ .milestone-section{margin-top:35px;padding-top:22px}
+ .milestone-intro{font-size:11px}
+}
+@media(prefers-color-scheme:dark){
+ .family-life-section,.economy-column{background:var(--paper2);color:var(--ink)}
+ .family-principles article{background:var(--paper);border-color:var(--line)}
+ .family-principles h3,.milestone-title,.economy-column>h3{color:var(--ink)}
+ .family-principles p,.milestone-intro,.economy-column>p,.lobby-points .point-card p{color:var(--muted)}
+ .lobby-points .point-card{background:var(--paper);border-color:var(--line)}
+ .economy-more{color:var(--muted)}
+}
