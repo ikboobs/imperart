@@ -105,8 +105,8 @@ export const members = [
     branch: 'Rama familiar por confirmar', legitimacy: 'Pendiente de registro', points: 0, merits: 0
   },
   {
-    id: 'kathee-bokuto', name: 'Kathee Bokuto', age: 23, houseId: 'bokuto', house: 'Casa Bokuto',
-    civilStatus: 'Soltera', occupation: 'Ocupación por definir', familyRole: 'Hermana melliza de Bokuto Kotaro; orden de nacimiento por confirmar',
+    id: 'kathee-bokuto', name: 'Kathee Bokuto', age: 22, houseId: 'bokuto', house: 'Casa Bokuto',
+    civilStatus: 'Soltera', occupation: 'Ocupación por definir', familyRole: 'Hermana melliza de Bokuto Kotaro',
     branch: 'Rama familiar por confirmar', legitimacy: 'Pendiente de registro', reportsTo: 'Bokuto Kotaro',
     points: 0, merits: 0
   },
