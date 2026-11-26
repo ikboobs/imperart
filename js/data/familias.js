@@ -14,8 +14,8 @@ export const familyStandings = [
     wealth: 'Muy alto · patrimonio privado, rentas y bienes de la casa reinante',
     members: [
       { name: 'Otoha Miya', position: 'Emperatriz reinante · cabeza de la casa', points: 0, merits: 0 },
-      { name: 'Aran', position: 'Consorte imperial · antiguo general', points: 0, merits: 0 },
-      { name: 'Cuatro hijos imperiales', position: 'Descendencia de la soberana · nombres pendientes', points: 0, merits: 0 },
+      { name: 'Aran Ojiro', position: 'Consorte imperial · antiguo general', points: 0, merits: 0 },
+      { name: 'Cuatro hijos imperiales', position: 'Descendencia directa de Otoha y Aran', points: 0, merits: 0 },
     ]
   },
   {
@@ -29,7 +29,7 @@ export const familyStandings = [
     wealth: 'Medio-alto · patrimonio privado, rentas y bienes de tradición erudita',
     members: [
       { name: 'Tadashi Yamaguchi', position: 'Cabeza de casa · Ministro de Obras', points: 0, merits: 0 },
-      { name: 'Kei', position: 'Consorte de Tadashi', points: 0, merits: 0 },
+      { name: 'Kei Tsukishima', position: 'Consorte de Tadashi', points: 0, merits: 0 },
       { name: 'Tarae Yamaguchi', position: 'Integrante de la casa · hermana de Tadashi', points: 0, merits: 0 },
       { name: 'Tsubaru Yamaguchi', position: 'Integrante de la casa · hermana de Tadashi', points: 0, merits: 0 }
     ]
@@ -47,7 +47,8 @@ export const familyStandings = [
     wealth: 'Medio · patrimonio familiar y tradición de servicio militar',
     members: [
       { name: 'Tobio Kageyama', position: 'Cabeza de casa · General', points: 0, merits: 0 },
-      { name: 'Mizuki', position: 'Sobrino del cabeza de casa', points: 0, merits: 0 }
+      { name: 'Mizuki Kageyama', position: 'Sobrino · Aprendiz del Valle de la Medicina', points: 0, merits: 0 },
+      { name: 'Alissa Haiba', position: 'Dama noble · Madrina y cuidadora de Mizuki', points: 0, merits: 0 }
     ]
   },
   {
@@ -58,7 +59,7 @@ export const familyStandings = [
     wealth: 'Medio-alto · propiedades privadas, rentas y reservas familiares',
     members: [
       { name: 'Sakusa Kiyoomi', position: 'Heredero de la familia Sakusa' },
-      { name: 'Sakusa Khaowei', position: 'Antiguo heredero; abdicó de esa condición' }
+      { name: 'Sakusa Khaowei', position: 'Antiguo heredero · Comandante qiānhù de la Guardia Imperial' }
     ]
   },
   {
