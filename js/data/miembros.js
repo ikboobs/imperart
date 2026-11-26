@@ -40,11 +40,6 @@ export const members = [
     branch: 'Rama colateral de Osamu', legitimacy: 'Pendiente de registro', points: 0, merits: 0
   },
   {
-    id: 'atsumu-miya', name: 'Atsumu Miya', age: null, houseId: 'miya-colateral-atsumu', house: 'Rama Miya de Atsumu',
-    civilStatus: 'Pendiente', occupation: 'Príncipe imperial', familyRole: 'Príncipe de rama colateral',
-    branch: 'Rama colateral de Atsumu', legitimacy: 'Pendiente de registro', points: 0, merits: 0
-  },
-  {
     id: 'atsuki-miya', name: 'Atsuki Miya', age: 16, houseId: 'miya-colateral-osamu', house: 'Rama Miya de Osamu',
     civilStatus: 'Soltero', occupation: 'Formación por definir', familyRole: 'Hijo de Osamu Miya y Tarae Yamaguchi',
     branch: 'Rama colateral de Osamu', legitimacy: 'Pendiente de registro', reportsTo: 'Osamu Miya y Tarae Yamaguchi',
