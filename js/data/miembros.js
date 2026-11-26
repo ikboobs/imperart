@@ -2,7 +2,7 @@
 // Los campos desconocidos se dejan explícitos como pendientes; no se infieren parentescos ni legitimidad.
 export const members = [
   {
-    id: 'otoha-miya', name: 'Otoha Miya', age: null, houseId: 'miya-soberana', house: 'Casa Miya',
+    id: 'otoha-miya', name: 'Otoha Miya', age: 44, houseId: 'miya-soberana', house: 'Casa Miya',
     civilStatus: 'Casada con Aran', occupation: 'Emperatriz reinante', familyRole: 'Cabeza de la casa imperial',
     branch: 'Línea imperial directa', legitimacy: 'Descendencia legítima por confirmar en ficha genealógica',
     reportsTo: null, patron: null, points: 0, merits: 0, housePoints: 0, houseMerits: 0
@@ -45,13 +45,25 @@ export const members = [
     branch: 'Rama colateral de Atsumu', legitimacy: 'Pendiente de registro', points: 0, merits: 0
   },
   {
-    id: 'tadashi-yamaguchi', name: 'Tadashi Yamaguchi', age: null, houseId: 'yamaguchi', house: 'Casa Yamaguchi',
-    civilStatus: 'Pendiente', occupation: 'Ministro de Obras', familyRole: 'Cabeza de familia',
+    id: 'atsuki-miya', name: 'Atsuki Miya', age: 16, houseId: 'miya-colateral-osamu', house: 'Rama Miya de Osamu',
+    civilStatus: 'Soltero', occupation: 'Formación por definir', familyRole: 'Hijo de Osamu Miya y Tarae Yamaguchi',
+    branch: 'Rama colateral de Osamu', legitimacy: 'Pendiente de registro', reportsTo: 'Osamu Miya y Tarae Yamaguchi',
+    points: 0, merits: 0
+  },
+  {
+    id: 'atsumu-miya', name: 'Atsumu Miya', age: 34, houseId: 'miya-colateral-atsumu', house: 'Rama Miya de Atsumu',
+    civilStatus: 'Casado con Shinsuke Kita', occupation: 'Consejero de la emperatriz', familyRole: 'Hermano menor de Otoha Miya',
+    branch: 'Rama colateral de Atsumu', legitimacy: 'Pendiente de registro', reportsTo: 'Otoha Miya',
+    points: 0, merits: 0
+  },
+  {
+    id: 'tadashi-yamaguchi', name: 'Tadashi Yamaguchi', age: 37, houseId: 'yamaguchi', house: 'Casa Yamaguchi',
+    civilStatus: 'Casado con Kei Tsukishima', occupation: 'Ministro de Obras', familyRole: 'Cabeza de la rama principal y de la Casa Yamaguchi',
     branch: 'Rama principal', legitimacy: 'Pendiente de registro', points: 0, merits: 0
   },
   {
-    id: 'kei-yamaguchi', name: 'Kei', age: null, houseId: 'yamaguchi', house: 'Casa Yamaguchi',
-    civilStatus: 'Casado con Tadashi Yamaguchi', occupation: 'Consorte de casa', familyRole: 'Consorte de Tadashi',
+    id: 'kei-yamaguchi', name: 'Kei Tsukishima', age: 35, houseId: 'yamaguchi', house: 'Casa Yamaguchi',
+    civilStatus: 'Casado con Tadashi Yamaguchi', occupation: 'Consorte de la rama principal', familyRole: 'Consorte de Tadashi Yamaguchi',
     branch: 'Incorporado por matrimonio', legitimacy: 'No aplica: vínculo por matrimonio', reportsTo: 'Tadashi Yamaguchi', points: 0, merits: 0
   },
   {
@@ -96,6 +108,19 @@ export const members = [
     id: 'bokuto-kotaro', name: 'Bokuto Kotaro', age: 22, houseId: 'bokuto', house: 'Casa Bokuto',
     civilStatus: 'Comprometido', occupation: 'Erudito', familyRole: 'Integrante de la Casa Bokuto',
     branch: 'Rama familiar por confirmar', legitimacy: 'Pendiente de registro', points: 0, merits: 0
+  },
+  {
+    id: 'kathee-bokuto', name: 'Kathee Bokuto', age: 23, houseId: 'bokuto', house: 'Casa Bokuto',
+    civilStatus: 'Soltera', occupation: 'Ocupación por definir', familyRole: 'Hermana melliza menor de Bokuto Kotaro',
+    branch: 'Rama familiar por confirmar', legitimacy: 'Pendiente de registro', reportsTo: 'Bokuto Kotaro',
+    points: 0, merits: 0
+  },
+  {
+    id: 'yildiz-tendou', name: 'Yildiz Tendou', age: 18, houseId: 'tendou', house: 'Casa Tendou',
+    civilStatus: 'Soltera', occupation: 'Artista principal de una casa de té, bajo patrocinio familiar',
+    familyRole: 'Integrante más joven de la Casa Tendou',
+    branch: 'Rama familiar por confirmar', legitimacy: 'Pendiente de registro',
+    points: 0, merits: 0
   }
 
 ];
