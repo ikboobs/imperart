@@ -106,7 +106,7 @@ export const members = [
   },
   {
     id: 'kathee-bokuto', name: 'Kathee Bokuto', age: 23, houseId: 'bokuto', house: 'Casa Bokuto',
-    civilStatus: 'Soltera', occupation: 'Ocupación por definir', familyRole: 'Hermana melliza menor de Bokuto Kotaro',
+    civilStatus: 'Soltera', occupation: 'Ocupación por definir', familyRole: 'Hermana melliza de Bokuto Kotaro; orden de nacimiento por confirmar',
     branch: 'Rama familiar por confirmar', legitimacy: 'Pendiente de registro', reportsTo: 'Bokuto Kotaro',
     points: 0, merits: 0
   },
